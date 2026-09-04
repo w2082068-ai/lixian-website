@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>儷鮮嚴選｜肉品・海鮮</title>
+<meta name="description" content="儷鮮嚴選｜嚴選冷凍海鮮與肉品，讓每一餐都值得好好享受。">
+<style>
+:root{--cream:#f7f3eb;--gold:#c8ad78;--brown:#4b4035;--light:#fffdf8}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC",sans-serif;color:var(--brown);background:var(--cream);line-height:1.7}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,253,248,.94);backdrop-filter:blur(10px);border-bottom:1px solid #e8dfd0;padding:14px 6%;display:flex;justify-content:space-between;align-items:center}
+.logo{font-weight:700;letter-spacing:3px;font-size:20px}.navlinks a{color:var(--brown);text-decoration:none;margin-left:22px;font-size:14px}
+.hero{min-height:72vh;display:flex;align-items:center;padding:70px 8%;background:linear-gradient(120deg,#fbf8f1,#eee5d6)}
+.hero-inner{max-width:650px}.eyebrow{letter-spacing:4px;color:#9d8250;font-size:13px}.hero h1{font-size:clamp(42px,8vw,76px);line-height:1.15;margin:15px 0}.hero p{font-size:19px;color:#6b5c4d}.btn{display:inline-block;margin-top:22px;padding:12px 25px;border-radius:30px;background:var(--brown);color:white;text-decoration:none;margin-right:10px}.btn.gold{background:var(--gold)}
+section{padding:70px 7%}.title{text-align:center;margin-bottom:38px}.title small{color:#a18758;letter-spacing:3px}.title h2{font-size:32px;margin:5px 0}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.card{background:var(--light);border:1px solid #e9dfd0;border-radius:18px;padding:28px 20px;text-align:center}.icon{font-size:42px}.card h3{margin:10px 0 5px}.card p{font-size:14px;color:#786b5e}
+.feature{background:#fffdf8}.products{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.product{background:white;border-radius:18px;padding:26px;border:1px solid #e9dfd0}.product .tag{display:inline-block;background:#f0e6d5;padding:3px 10px;border-radius:20px;font-size:12px}.product h3{margin:12px 0 4px}.product p{margin:0;color:#76695b;font-size:14px}
+.about{background:#4b4035;color:#fff9ef;text-align:center}.about p{max-width:680px;margin:auto;color:#e9dfd0}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:30px;max-width:1000px;margin:auto}.contact-box{background:#fffdf8;border:1px solid #e9dfd0;border-radius:18px;padding:28px}.contact-box a{color:#80673c;text-decoration:none}
+footer{text-align:center;padding:28px;background:#3c332b;color:#eee3d3;font-size:13px}
+@media(max-width:760px){.navlinks{display:none}.hero{min-height:65vh;padding:60px 8%}.cards{grid-template-columns:1fr 1fr}.products{grid-template-columns:1fr}.contact{grid-template-columns:1fr}section{padding:55px 6%}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">儷鮮嚴選</div>
+  <div class="navlinks">
+    <a href="#products">熱門商品</a><a href="#about">品牌介紹</a><a href="#contact">聯絡我們</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">LI XIAN SELECTED · MEAT & SEAFOOD</div>
+    <h1>儷鮮嚴選</h1>
+    <p>嚴選好食材，讓每一餐，都值得好好享受。</p>
+    <a class="btn gold" href="https://lin.ee/" target="_blank">加入官方 LINE</a>
+    <a class="btn" href="#products">看看熱門商品</a>
+  </div>
+</header>
+
+<section>
+  <div class="title"><small>OUR SELECTION</small><h2>嚴選食材</h2></div>
+  <div class="cards">
+    <div class="card"><div class="icon">🦐</div><h3>海鮮</h3><p>精選蝦類、貝類與各式海鮮</p></div>
+    <div class="card"><div class="icon">🥩</div><h3>牛肉</h3><p>嚴選牛肉，滿足家庭與聚餐需求</p></div>
+    <div class="card"><div class="icon">🐷</div><h3>豬肉</h3><p>多款人氣豬肉與烤肉食材</p></div>
+    <div class="card"><div class="icon">🔥</div><h3>烤肉組合</h3><p>節慶限定，輕鬆一次備齊</p></div>
+  </div>
+</section>
+
+<section id="products" class="feature">
+  <div class="title"><small>HOT PICKS</small><h2>熱門商品</h2></div>
+  <div class="products">
+    <div class="product"><span class="tag">海鮮</span><h3>日本生食級 4S 干貝</h3><p>500G｜生食、煎烤都適合</p></div>
+    <div class="product"><span class="tag">海鮮</span><h3>天然活凍草蝦</h3><p>精選規格｜鮮甜彈牙</p></div>
+    <div class="product"><span class="tag">肉品</span><h3>法式豬戰斧</h3><p>500G｜適合煎烤與節慶聚餐</p></div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="title"><small>ABOUT US</small><h2>儷鮮嚴選</h2></div>
+  <p>從日常餐桌到家庭聚餐，我們用心挑選海鮮與肉品，希望把方便、美味與品質帶進每一餐。<br>想吃什麼，歡迎直接加入 LINE 詢問最新商品與優惠。</p>
+</section>
+
+<section id="contact">
+  <div class="title"><small>CONTACT</small><h2>聯絡我們</h2></div>
+  <div class="contact">
+    <div class="contact-box">
+      <h3>📱 官方 LINE</h3>
+      <p><strong>@340dfrur</strong></p>
+      <a href="https://line.me/R/ti/p/@340dfrur" target="_blank">點此加入官方 LINE →</a>
+      <h3>☎️ 電話</h3><p><a href="tel:033681590">03-3681590</a></p>
+    </div>
+    <div class="contact-box">
+      <h3>📍 店面地址</h3>
+      <p>334 桃園市八德區長興路292號</p>
+      <a href="https://www.google.com/maps/search/?api=1&query=桃園市八德區長興路292號" target="_blank">開啟 Google 地圖 →</a>
+      <h3>📣 FB / IG</h3><p>儷鮮嚴選 肉品海鮮</p>
+    </div>
+  </div>
+</section>
+
+<footer>© 儷鮮嚴選 肉品海鮮｜嚴選好食材，讓每一餐都值得好好享受。</footer>
+</body>
+</html>
