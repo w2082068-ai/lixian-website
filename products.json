@@ -1,0 +1,106 @@
+[
+  {
+    "id": "broccoli",
+    "category": "蔬菜類",
+    "name": "冷凍青花菜",
+    "spec": "1000g ±5%／包",
+    "price": "89",
+    "image": "images/frozen_broccoli_1000g.jpeg"
+  },
+  {
+    "id": "clam",
+    "category": "海鮮｜貝類",
+    "name": "熟文蛤",
+    "spec": "500g／包",
+    "price": "155",
+    "image": "images/cooked_clams_500g.jpeg"
+  },
+  {
+    "id": "lobster",
+    "category": "海鮮｜龍蝦",
+    "name": "龍蝦尾",
+    "spec": "250g／包",
+    "price": "550",
+    "image": "images/lobster_tail_250g.jpeg"
+  },
+  {
+    "id": "sweetfish",
+    "category": "海鮮｜魚類",
+    "name": "香魚",
+    "spec": "900±15g／盒",
+    "price": "380",
+    "image": "images/sweetfish_12p_900g.jpeg"
+  },
+  {
+    "id": "cod",
+    "category": "海鮮｜魚類",
+    "name": "厚切鱈魚片",
+    "spec": "250g／包",
+    "price": "140",
+    "image": "images/thick_cut_cod_250g.jpeg"
+  },
+  {
+    "id": "shrimp",
+    "category": "海鮮｜蝦類",
+    "name": "活凍紅太陽白蝦",
+    "spec": "850g／包",
+    "price": "325",
+    "image": ""
+  },
+  {
+    "id": "scallop",
+    "category": "海鮮｜貝類",
+    "name": "日本生食級4S干貝",
+    "spec": "500g／包",
+    "price": "",
+    "image": "images/japan_4s_scallop_500g.jpeg"
+  },
+  {
+    "id": "prime-rib",
+    "category": "肉品｜牛肉",
+    "name": "Prime 無骨牛小排",
+    "spec": "規格依現貨",
+    "price": "335",
+    "image": "images/prime_boneless_short_rib.jpeg"
+  },
+  {
+    "id": "pork-chop",
+    "category": "肉品｜豬肉",
+    "name": "法式豬戰斧",
+    "spec": "500g／包",
+    "price": "289",
+    "image": "images/french_pork_chop_500g.jpeg"
+  },
+  {
+    "id": "pork-bbq",
+    "category": "肉品｜豬肉",
+    "name": "老饕燒肉",
+    "spec": "規格依現貨",
+    "price": "135",
+    "image": ""
+  },
+  {
+    "id": "c999",
+    "category": "中秋節烤肉專區",
+    "name": "$999 烤肉組合",
+    "spec": "中秋節限定",
+    "price": "999",
+    "image": "images/combo_999_bbq.jpeg"
+  },
+  {
+    "id": "c1999",
+    "category": "中秋節烤肉專區",
+    "name": "$1,999 烤肉組合",
+    "spec": "中秋節限定",
+    "price": "1999",
+    "image": "images/combo_1999.jpeg"
+  },
+  {
+    "id": "c2999",
+    "category": "中秋節烤肉專區",
+    "name": "$2,999 烤肉組合",
+    "spec": "中秋節限定",
+    "price": "2999",
+    "image": "images/combo_2999.jpeg"
+  }
+]
