@@ -1,4 +1,119 @@
-<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>儷鮮嚴選｜線上菜單</title><style>
-*{box-sizing:border-box}body{margin:0;background:#f7f2ea;color:#4c392d;font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC",sans-serif;padding-bottom:95px}header{background:#fffdf9;border-bottom:1px solid #e4d8c7;padding:20px 17px;position:sticky;top:0;z-index:5}.brand{font-size:25px;font-weight:900;letter-spacing:4px}.en{font-size:11px;letter-spacing:4px;color:#a88758}.tag{float:right;margin-top:-28px;color:#927754}main{max-width:1000px;margin:auto;padding:18px 15px}.hero{background:linear-gradient(135deg,#fffdf9,#eee2d1);border:1px solid #e3d6c5;border-radius:22px;padding:23px;margin-bottom:15px}.hero h1{margin:0;font-size:28px}.hero p{line-height:1.7;color:#7d6c5b}.nav{display:flex;gap:8px;overflow:auto;padding:4px 0 15px}.nav button{white-space:nowrap;border:1px solid #d8cbbb;background:#fffaf3;border-radius:999px;padding:10px 14px;color:#6c5745;font-weight:700}.nav .on{background:#4c392d;color:white}.section{margin:16px 0 28px}.section h2{font-size:22px}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.card{background:#fffdf9;border:1px solid #e4d8c7;border-radius:18px;overflow:hidden}.pic{aspect-ratio:1;background:#eee5da;display:flex;align-items:center;justify-content:center;color:#a18f7d}.pic img{width:100%;height:100%;object-fit:cover}.info{padding:12px}.name{font-weight:900;font-size:17px}.spec{font-size:13px;color:#887665;margin-top:4px}.price{font-weight:900;color:#986d32;font-size:21px;margin-top:8px}.empty{padding:18px;text-align:center;color:#887665;background:#fffdf9;border:1px dashed #d8cbbb;border-radius:14px}.bottom{position:fixed;bottom:12px;left:12px;right:12px;background:#4c392d;color:white;text-align:center;padding:17px;border-radius:22px;text-decoration:none;font-size:18px;font-weight:900;z-index:20;box-shadow:0 8px 25px #3d2b1d44}.bottom span{font-size:13px;font-weight:500;margin-left:7px}@media(min-width:700px){.grid{grid-template-columns:repeat(3,1fr)}} </style></head><body>
-<header><div class="brand">儷鮮嚴選</div><div class="en">MEAT & SEAFOOD</div><div class="tag">線上菜單</div></header><main><section class="hero"><h1>嚴選好食材・每一餐都值得</h1><p>肉品・海鮮・蔬菜・火鍋料理包<br>商品與價格持續更新，歡迎瀏覽線上菜單。</p></section><div id="nav" class="nav"></div><div id="menu"></div></main><a class="bottom" href="https://line.me/R/ti/p/@340dfrur" target="_blank">LINE 立即下單 <span>@340dfrur</span></a>
-<script>let data=[];const cats=["全部","肉品｜牛肉","肉品｜豬肉","肉品｜雞肉","肉品｜羊肉","火鍋肉片","海鮮｜魚類","海鮮｜蝦類","海鮮｜龍蝦","海鮮｜花枝／魷魚","海鮮｜貝類","海鮮｜火鍋料／丸類","海鮮｜海鮮加工品","蔬菜類","火鍋料理包","中秋節烤肉專區"];const esc=s=>String(s??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");function imgSrc(src){src=String(src||"");return src.startsWith("images/")?src.slice(7):src}function imageMarkup(p){if(!p.image)return "商品圖片";const src=esc(imgSrc(p.image)),alt=esc(p.name);return '<img src="'+src+'" alt="'+alt+'" loading="lazy">'}fetch("products.json").then(r=>{if(!r.ok)throw Error("商品資料暫時無法載入");return r.json()}).then(d=>{if(!Array.isArray(d))throw Error("商品資料格式不正確");data=d;render("全部")}).catch(e=>{document.getElementById("menu").innerHTML='<p class="empty">'+esc(e.message)+'，請稍後重新整理。</p>'});function render(f){document.getElementById("nav").innerHTML=cats.map(c=>'<button class="'+(c==f?'on':'')+'" onclick="render('+JSON.stringify(c)+')">'+c+'</button>').join("");let a=f=="全部"?data:data.filter(p=>p.category==f);let g={};a.forEach(p=>(g[p.category]??=[]).push(p));document.getElementById("menu").innerHTML=Object.entries(g).map(([c,ps])=>'<section class="section"><h2>'+esc(c)+'</h2><div class="grid">'+ps.map(p=>'<article class="card"><div class="pic">'+imageMarkup(p)+'</div><div class="info"><div class="name">'+esc(p.name)+'</div><div class="spec">'+esc(p.spec)+'</div>'+(p.price?'<div class="price">$'+Number(p.price).toLocaleString()+'</div>':'')+'</div></article>').join("")+'</div></section>').join("")||'<p class="empty">此分類目前沒有商品。</p>'}</script></body></html>
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="儷鮮嚴選線上菜單，瀏覽肉品、海鮮、蔬菜與烤肉組合，透過 LINE 洽詢及下單。"><title>儷鮮嚴選｜線上菜單</title><style>
+*{box-sizing:border-box}body{margin:0;background:#f7f2ea;color:#4c392d;font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","PingFang TC",sans-serif;padding-bottom:95px}header{background:#fffdf9;border-bottom:1px solid #e4d8c7;padding:20px 17px;position:sticky;top:0;z-index:5}.brand{font-size:25px;font-weight:900;letter-spacing:4px}.en{font-size:11px;letter-spacing:4px;color:#a88758}.tag{float:right;margin-top:-28px;color:#927754}main{max-width:1000px;margin:auto;padding:18px 15px}.hero{background:linear-gradient(135deg,#fffdf9,#eee2d1);border:1px solid #e3d6c5;border-radius:22px;padding:23px;margin-bottom:15px}.hero h1{margin:0;font-size:28px}.hero p{line-height:1.7;color:#7d6c5b}.nav{display:flex;gap:8px;overflow:auto;padding:4px 0 15px}.nav button{white-space:nowrap;border:1px solid #d8cbbb;background:#fffaf3;border-radius:999px;padding:10px 14px;color:#6c5745;font-weight:700}.nav .on{background:#4c392d;color:white}.section{margin:16px 0 28px}.section h2{font-size:22px}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.card{background:#fffdf9;border:1px solid #e4d8c7;border-radius:18px;overflow:hidden}.pic{aspect-ratio:1;background:#eee5da;display:flex;align-items:center;justify-content:center;color:#a18f7d}.pic img{width:100%;height:100%;object-fit:contain}.info{padding:12px}.name{font-weight:900;font-size:17px}.spec{font-size:13px;color:#887665;margin-top:4px}.price{font-weight:900;color:#986d32;font-size:21px;margin-top:8px}.empty{padding:18px;text-align:center;color:#887665;background:#fffdf9;border:1px dashed #d8cbbb;border-radius:14px}.bottom{position:fixed;bottom:12px;left:12px;right:12px;background:#4c392d;color:white;text-align:center;padding:17px;border-radius:22px;text-decoration:none;font-size:18px;font-weight:900;z-index:20;box-shadow:0 8px 25px #3d2b1d44}.bottom span{font-size:13px;font-weight:500;margin-left:7px}@media(min-width:700px){.grid{grid-template-columns:repeat(3,1fr)}} 
+button,a{-webkit-tap-highlight-color:transparent}button{cursor:pointer;font:inherit}
+button:focus-visible,a:focus-visible{outline:3px solid #986d32;outline-offset:4px}
+.grid{align-items:start}.card{min-width:0}.name{overflow-wrap:anywhere;line-height:1.5}
+.pic{overflow:hidden}.pic img{display:block}.placeholder{padding:20px;text-align:center;font-size:14px;line-height:1.8}
+.price.ask{font-size:15px;color:#796958}.bottom{max-width:970px;margin:auto;bottom:calc(12px + env(safe-area-inset-bottom))}
+body{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
+#status{font-size:13px;color:#796958;margin:4px 0 20px}.retry{margin-top:12px;border:1px solid #d8cbbb;background:#fffaf3;padding:10px 18px;border-radius:12px;color:#4c392d}
+@media(max-width:360px){.hero h1{font-size:24px}.name{font-size:15px}.info{padding:10px}.bottom{font-size:16px}.bottom span{font-size:12px}}
+</style></head><body>
+<header><div class="brand">儷鮮嚴選</div><div class="en">MEAT & SEAFOOD</div><div class="tag">線上菜單</div></header><main><section class="hero"><h1>嚴選好食材・每一餐都值得</h1><p>肉品・海鮮・蔬菜・火鍋料理包<br>商品與價格持續更新，歡迎瀏覽線上菜單。</p></section><nav id="nav" class="nav" aria-label="商品分類"></nav><p id="status" role="status">商品載入中…</p><div id="menu" aria-busy="true"></div><noscript><p class="empty">請開啟 JavaScript 瀏覽商品菜單，或點選下方 LINE 洽詢商品與下單。</p></noscript></main><a class="bottom" href="https://line.me/R/ti/p/@340dfrur" target="_blank" rel="noopener noreferrer">LINE 立即下單 <span>@340dfrur</span></a>
+<script>
+
+"use strict";
+let data = [];
+const nav = document.getElementById("nav");
+const menu = document.getElementById("menu");
+const status = document.getElementById("status");
+function element(tag, className, text) {
+  const node = document.createElement(tag);
+  if (className) node.className = className;
+  if (text !== undefined) node.textContent = text;
+  return node;
+}
+function placeholder(box) {
+  box.replaceChildren(element("span", "placeholder", "商品照片準備中"));
+}
+function productCard(product) {
+  const card = element("article", "card");
+  const pic = element("div", "pic");
+  placeholder(pic);
+  if (product.image) {
+    const img = element("img");
+    img.alt = product.name;
+    img.loading = "lazy";
+    img.decoding = "async";
+    img.addEventListener("error", () => placeholder(pic), { once: true });
+    img.src = product.image;
+    pic.replaceChildren(img);
+  }
+  const info = element("div", "info");
+  info.append(element("div", "name", product.name), element("div", "spec", product.spec || ""));
+  const raw = String(product.price ?? "").trim();
+  const price = Number(raw);
+  const hasPrice = raw !== "" && Number.isFinite(price) && price >= 0;
+  info.append(element("div", hasPrice ? "price" : "price ask",
+    hasPrice ? "NT$ " + price.toLocaleString("zh-TW") : "價格請洽 LINE"));
+  card.append(pic, info);
+  return card;
+}
+function render(category) {
+  for (const button of nav.children) {
+    const selected = button.textContent === category;
+    button.classList.toggle("on", selected);
+    button.setAttribute("aria-pressed", String(selected));
+  }
+  const products = category === "全部" ? data : data.filter(p => p.category === category);
+  const groups = new Map();
+  products.forEach(product => {
+    if (!groups.has(product.category)) groups.set(product.category, []);
+    groups.get(product.category).push(product);
+  });
+  menu.replaceChildren();
+  for (const [name, products] of groups) {
+    const section = element("section", "section");
+    const grid = element("div", "grid");
+    products.forEach(product => grid.append(productCard(product)));
+    section.append(element("h2", "", name), grid);
+    menu.append(section);
+  }
+  if (!products.length) menu.append(element("p", "empty", "此分類目前沒有商品。"));
+  status.textContent = category + " · " + products.length + " 項商品";
+}
+async function loadProducts() {
+  status.textContent = "商品載入中…";
+  menu.setAttribute("aria-busy", "true");
+  nav.replaceChildren();
+  menu.replaceChildren();
+  try {
+    const response = await fetch("./products.json", { cache: "no-cache" });
+    if (!response.ok) throw new Error("商品資料暫時無法載入");
+    const products = await response.json();
+    if (!Array.isArray(products) || !products.every(p => p && typeof p.name === "string" &&
+      typeof p.category === "string" && (!p.image || typeof p.image === "string"))) {
+      throw new Error("商品資料格式不正確");
+    }
+    data = products;
+    let savedCategories = [];
+    try {
+      const categoriesResponse = await fetch("./categories.json", { cache: "no-cache" });
+      if (categoriesResponse.ok) {
+        const values = await categoriesResponse.json();
+        if (Array.isArray(values)) savedCategories = values.filter(c => typeof c === "string" && c.trim() && c !== "全部");
+      }
+    } catch (_) { /* 商品仍可使用自身分類顯示。 */ }
+    const categories = ["全部", ...new Set([...savedCategories, ...data.map(p => p.category)])];
+    categories.forEach(category => {
+      const button = element("button", "", category);
+      button.type = "button";
+      button.addEventListener("click", () => render(category));
+      nav.append(button);
+    });
+    render("全部");
+  } catch (error) {
+    status.textContent = "商品暫時無法顯示";
+    const message = element("div", "empty");
+    message.append(element("p", "", "商品資料暫時無法載入，請重試，或透過下方 LINE 洽詢。"));
+    const retry = element("button", "retry", "重新載入");
+    retry.type = "button";
+    retry.addEventListener("click", loadProducts);
+    message.append(retry);
+    menu.replaceChildren(message);
+  } finally {
+    menu.setAttribute("aria-busy", "false");
+  }
+}
+loadProducts();
+</script></body></html>
