@@ -18,7 +18,7 @@
 <p class="note">修改分類名稱會同步更新該分類的商品。請先移走分類內的商品，再刪除分類。</p>
 </section>
 <section class="box"><div class="toolbar"><h2 style="flex:1">商品管理</h2><button id="add-product" type="button">＋ 新增商品</button></div><div id="products"></div></section>
-<section class="box"><h2>儲存與預覽</h2><div class="toolbar"><button id="save" type="button">儲存草稿</button><button id="preview-button" type="button">預覽菜單</button><button id="export" type="button">下載菜單備份</button><button id="restore" type="button">匯入菜單備份</button></div>
+<section class="box"><h2>儲存與預覽</h2><div class="toolbar"><button id="save" type="button">儲存草稿</button><button id="reload-online" type="button">載入官網版本</button><button id="preview-button" type="button">預覽菜單</button><button id="export" type="button">下載菜單備份</button><button id="restore" type="button">匯入菜單備份</button></div>
 <input id="backup-file" type="file" accept=".json,application/json" hidden>
 <p class="note">草稿只保存在目前瀏覽器，不會自動更新官網。下載備份可保存商品、分類與本次上傳的照片，交由協助者發布。</p>
 <div id="preview" hidden></div></section>
@@ -37,6 +37,15 @@ let products = [], categories = [], photos = {}, baseline = null, db, dirty = fa
 function node(tag, text, className) { const e = document.createElement(tag); if(text !== undefined) e.textContent = text; if(className) e.className = className; return e; }
 function message(text) { $("message").textContent = text; }
 function button(text, action, className) { const e=node("button",text,className); e.type="button"; e.addEventListener("click",action); return e; }
+function confirmAction(text){
+ return new Promise(resolve=>{
+  const dialog=node("dialog");dialog.style.cssText="max-width:420px;border:1px solid #d8cbbb;border-radius:16px;padding:24px;color:#4c392d;background:#fffdf9";
+  const finish=value=>{dialog.close();dialog.remove();resolve(value);};
+  const title=node("p",text);const actions=node("div",undefined,"toolbar");
+  actions.append(button("取消",()=>finish(false)),button("確認",()=>finish(true),"primary"));dialog.append(title,actions);
+  dialog.addEventListener("cancel",event=>{event.preventDefault();finish(false);});document.body.append(dialog);dialog.showModal();
+ });
+}
 function field(label, value, change, type="text") { const wrap=node("label",label); const input=node("input"); input.type=type; input.value=value ?? ""; if(type==="number"){input.min="0";input.step="any";} input.addEventListener("input",()=>{change(input.value);dirty=true;}); wrap.append(input); return wrap; }
 function snapshot(){return {version:1,products,categories,photos,baseline};}
 function valid(state) {
@@ -101,7 +110,7 @@ function renderProducts(){
   categories.forEach(c=>{const option=node("option",c);option.value=c;select.append(option);});select.value=p.category;
   select.addEventListener("change",()=>{p.category=select.value;dirty=true;});label.append(select);
   row.append(label,field("價格（NT$，留白代表請洽 LINE）",p.price,v=>p.price=v,"number"));right.append(row,field("規格",p.spec,v=>p.spec=v));
-  right.append(button("刪除商品",()=>{if(!confirm("確定刪除「"+(p.name||"未命名商品")+"」？"))return;products=products.filter(item=>item.id!==p.id);delete photos[p.id];dirty=true;renderProducts();saveDraft();},"danger"));
+  right.append(button("刪除商品",async()=>{if(!await confirmAction("確定刪除「"+(p.name||"未命名商品")+"」？"))return;products=products.filter(item=>item.id!==p.id);delete photos[p.id];dirty=true;renderProducts();saveDraft();},"danger"));
   article.append(left,right);$("products").append(article);
  });
 }
@@ -151,21 +160,23 @@ $("add-product").addEventListener("click",()=>{if(!categories.length)return mess
 $("save").addEventListener("click",saveDraft);$("preview-button").addEventListener("click",preview);$("publish").addEventListener("click",publish);
 $("export").addEventListener("click",()=>{const blob=new Blob([JSON.stringify(snapshot(),null,2)],{type:"application/json"});const url=URL.createObjectURL(blob);const a=node("a");a.href=url;a.download="儷鮮嚴選-菜單備份-"+new Date().toISOString().slice(0,10)+".json";a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);message("已下載菜單備份，包含草稿與本次上傳的照片。");});
 $("restore").addEventListener("click",()=>$("backup-file").click());
-$("backup-file").addEventListener("change",async()=>{try{const file=$("backup-file").files[0];if(!file)return;const state=JSON.parse(await file.text());if(!valid(state))throw new Error("這不是有效的菜單備份。");if(!confirm("要以備份取代目前草稿嗎？已發布官網不受影響。"))return;({products,categories,photos={},baseline=null}=state);dirty=true;render();await saveDraft();}catch(e){message(e.message);}finally{$("backup-file").value="";}});
+$("backup-file").addEventListener("change",async()=>{try{const file=$("backup-file").files[0];if(!file)return;const state=JSON.parse(await file.text());if(!valid(state))throw new Error("這不是有效的菜單備份。");if(!await confirmAction("要以備份取代目前草稿嗎？已發布官網不受影響。"))return;({products,categories,photos={},baseline=null}=state);dirty=true;render();await saveDraft();}catch(e){message(e.message);}finally{$("backup-file").value="";}});
 window.addEventListener("beforeunload",event=>{if(dirty){event.preventDefault();event.returnValue="";}});
-async function init(){
- let draft;try{db=await openDB();draft=await readDraft();}catch(_){}
+$("reload-online").addEventListener("click",async()=>{if(await confirmAction("載入官網目前版本並取代此瀏覽器的草稿？如需保留草稿，請先下載備份。"))init(true);});
+async function init(ignoreDraft=false){
+ const previous=structuredClone(snapshot());
+ let draft;try{if(!db)db=await openDB();if(!ignoreDraft)draft=await readDraft();}catch(_){} 
  if(valid(draft)){({products,categories,photos={},baseline=null}=draft);render();$("editor").disabled=false;message("已還原此瀏覽器的草稿，尚未發布的內容可繼續編輯。");return;}
  try{
   const response=await fetch("./products.json",{cache:"no-cache"});if(!response.ok)throw new Error("菜單載入失敗，請重新整理。");
-  const productText=await response.text();products=JSON.parse(productText);
+  const productText=await response.text();products=JSON.parse(productText);categories=[];photos={};
   baseline={"products.json":await blobHash(productText),"categories.json":null};
   try{const response=await fetch("./categories.json",{cache:"no-cache"});if(response.ok){const text=await response.text();categories=JSON.parse(text);baseline["categories.json"]=await blobHash(text);}}catch(_){} 
   if(!Array.isArray(categories))categories=[];
   categories=[...new Set([...categories,...products.map(p=>p.category)])];
   if(!valid(snapshot()))throw new Error("線上菜單資料格式異常，請聯絡協助者。");
-  render();$("editor").disabled=false;message("已載入官網菜單。修改後請儲存草稿；儲存草稿不會直接發布。");
- }catch(e){message(e.message);}
+  render();$("editor").disabled=false;if(ignoreDraft)await saveDraft();message("已載入官網菜單。修改後請儲存草稿；儲存草稿不會直接發布。");
+ }catch(e){({products,categories,photos,baseline}=previous);message(e.message);}
 }
 init();
 </script>
