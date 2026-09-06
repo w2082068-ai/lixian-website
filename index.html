@@ -90,7 +90,8 @@ async function loadProducts() {
     try {
       const categoriesResponse = await fetch("./categories.json", { cache: "no-cache" });
       if (categoriesResponse.ok) {
-        const values = await categoriesResponse.json();
+        const saved = await categoriesResponse.json();
+        const values = Array.isArray(saved) ? saved : saved.categories;
         if (Array.isArray(values)) savedCategories = values.filter(c => typeof c === "string" && c.trim() && c !== "全部");
       }
     } catch (_) { /* 商品仍可使用自身分類顯示。 */ }

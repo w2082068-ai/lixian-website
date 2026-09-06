@@ -1,0 +1,52 @@
+media:
+  input: images
+  output: images
+  rename: random
+  extensions: [jpg, jpeg, png, webp]
+content:
+  - name: products
+    label: 商品與價目
+    type: file
+    path: products.json
+    format: json
+    list: true
+    fields:
+      - name: id
+        type: uuid
+        hidden: true
+        options:
+          editable: false
+          generate: false
+      - name: name
+        label: 商品名稱
+        type: string
+        required: true
+      - name: category
+        label: 分類名稱
+        type: string
+        required: true
+        description: 請填入分類管理中的名稱；相同名稱的商品會歸在同一類。
+      - name: image
+        label: 商品照片
+        type: image
+      - name: spec
+        label: 商品規格
+        type: string
+      - name: price
+        label: 價格（NT$）
+        type: string
+        description: 請填入已確認的價格；留白時官網顯示「價格請洽 LINE」。
+        pattern:
+          regex: '^[0-9]*([.][0-9]{1,2})?$'
+          message: 請填入零或正數，最多兩位小數；未確認價格請留白。
+  - name: categories
+    label: 分類管理
+    type: file
+    path: categories.json
+    format: json
+    fields:
+      - name: categories
+        label: 分類名稱
+        type: string
+        list: true
+        description: 可新增、刪除及排列分類。更名時請同步修改相關商品的分類名稱。請勿使用「全部」。

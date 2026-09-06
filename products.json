@@ -13,7 +13,7 @@
     "name": "熟文蛤",
     "spec": "500g／包",
     "price": "155",
-    "image": "cooked_clams_500g.jpeg"
+    "image": "images/cooked_clams_500g.jpeg"
   },
   {
     "id": "lobster",
@@ -21,7 +21,7 @@
     "name": "龍蝦尾",
     "spec": "250g／包",
     "price": "550",
-    "image": "lobster_tail_250g.jpeg"
+    "image": "images/lobster_tail_250g.jpeg"
   },
   {
     "id": "sweetfish",
@@ -37,7 +37,7 @@
     "name": "厚切鱈魚片",
     "spec": "250g／包",
     "price": "140",
-    "image": "thick_cut_cod_250g.jpeg"
+    "image": "images/thick_cut_cod_250g.jpeg"
   },
   {
     "id": "shrimp",
@@ -53,7 +53,7 @@
     "name": "日本生食級4S干貝",
     "spec": "500g／包",
     "price": "",
-    "image": "japan_4s_scallop_500g.jpeg"
+    "image": "images/japan_4s_scallop_500g.jpeg"
   },
   {
     "id": "prime-rib",
@@ -61,7 +61,7 @@
     "name": "Prime 無骨牛小排",
     "spec": "規格依現貨",
     "price": "335",
-    "image": "prime_boneless_short_rib.jpeg"
+    "image": "images/prime_boneless_short_rib.jpeg"
   },
   {
     "id": "pork-chop",
@@ -69,7 +69,7 @@
     "name": "法式豬戰斧",
     "spec": "500g／包",
     "price": "289",
-    "image": "french_pork_chop_500g.jpeg"
+    "image": "images/french_pork_chop_500g.jpeg"
   },
   {
     "id": "pork-bbq",
@@ -85,7 +85,7 @@
     "name": "$999 烤肉組合",
     "spec": "中秋節限定",
     "price": "999",
-    "image": "combo_999_bbq.jpeg"
+    "image": "images/combo_999_bbq.jpeg"
   },
   {
     "id": "c1999",
@@ -93,7 +93,7 @@
     "name": "$1,999 烤肉組合",
     "spec": "中秋節限定",
     "price": "1999",
-    "image": "combo_1999.jpeg"
+    "image": "images/combo_1999.jpeg"
   },
   {
     "id": "c2999",
@@ -101,6 +101,6 @@
     "name": "$2,999 烤肉組合",
     "spec": "中秋節限定",
     "price": "2999",
-    "image": "combo_2999.jpeg"
+    "image": "images/combo_2999.jpeg"
   }
 ]

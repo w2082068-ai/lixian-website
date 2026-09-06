@@ -10,6 +10,7 @@
 <body>
 <header><h1>儷鮮嚴選｜菜單管理</h1><p>新增分類、上傳照片、編輯商品與價格。</p><a class="link" href="./" target="_blank" rel="noopener">查看官網 ↗</a></header>
 <main>
+<section class="box"><h2>登入管理與發布</h2><p>透過 Pages CMS 登入，編輯商品、價格、分類與照片。儲存後會更新官網；首次使用需要 GitHub 授權。</p><a class="link primary" href="https://app.pagescms.org/" target="_blank" rel="noopener noreferrer">登入 Pages CMS ↗</a><p class="note">選擇 w2082068-ai / lixian-website 與 main。下方保留本機草稿工具；兩種方式的草稿不會自動同步。</p></section>
 <p id="message" role="status">正在載入菜單…</p>
 <fieldset id="editor" disabled>
 <section class="box">
@@ -146,7 +147,7 @@ async function publish(){
   if(!baseline || ["products.json","categories.json"].some(name=>baseline[name]!==remote[name]))throw new Error("線上菜單已變更，為避免覆蓋其他更新，本次未發布。請下載草稿備份，交由協助者整合。");
   const entries=[];
   for(const p of products){const photo=photos[p.id];if(!photo)continue;message("正在上傳商品照片…");const blob=await api("/git/blobs","POST",{content:photo.data.split(",")[1],encoding:"base64"});entries.push({path:photo.path,mode:"100644",type:"blob",sha:blob.sha});}
-  for(const [path,value] of [["products.json",products],["categories.json",categories]]){
+  for(const [path,value] of [["products.json",products],["categories.json",{categories}]]){
    const blob=await api("/git/blobs","POST",{content:JSON.stringify(value,null,2)+"\n",encoding:"utf-8"});entries.push({path,mode:"100644",type:"blob",sha:blob.sha});remote[path]=blob.sha;
   }
   const nextTree=await api("/git/trees","POST",{base_tree:current.tree.sha,tree:entries});
@@ -171,7 +172,7 @@ async function init(ignoreDraft=false){
   const response=await fetch("./products.json",{cache:"no-cache"});if(!response.ok)throw new Error("菜單載入失敗，請重新整理。");
   const productText=await response.text();products=JSON.parse(productText);categories=[];photos={};
   baseline={"products.json":await blobHash(productText),"categories.json":null};
-  try{const response=await fetch("./categories.json",{cache:"no-cache"});if(response.ok){const text=await response.text();categories=JSON.parse(text);baseline["categories.json"]=await blobHash(text);}}catch(_){} 
+  try{const response=await fetch("./categories.json",{cache:"no-cache"});if(response.ok){const text=await response.text();const saved=JSON.parse(text);categories=Array.isArray(saved)?saved:saved.categories;baseline["categories.json"]=await blobHash(text);}}catch(_){} 
   if(!Array.isArray(categories))categories=[];
   categories=[...new Set([...categories,...products.map(p=>p.category)])];
   if(!valid(snapshot()))throw new Error("線上菜單資料格式異常，請聯絡協助者。");
