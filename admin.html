@@ -172,6 +172,7 @@ async function init(ignoreDraft=false){
  try{
   const response=await fetch("./products.json",{cache:"no-cache"});if(!response.ok)throw new Error("菜單載入失敗，請重新整理。");
   const productText=await response.text();products=JSON.parse(productText);categories=[];photos={};
+  if(Array.isArray(products)){const seen=new Set();products=products.map(p=>{if(!p || typeof p!=="object")return p;let id=p.id;if(typeof id!=="string" || !id || seen.has(id))id="p-"+crypto.randomUUID();seen.add(id);return {...p,id};});}
   baseline={"products.json":await blobHash(productText),"categories.json":null};
   try{const response=await fetch("./categories.json",{cache:"no-cache"});if(response.ok){const text=await response.text();const saved=JSON.parse(text);categories=Array.isArray(saved)?saved:saved.categories;baseline["categories.json"]=await blobHash(text);}}catch(_){} 
   if(!Array.isArray(categories))categories=[];
