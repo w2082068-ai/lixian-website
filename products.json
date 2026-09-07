@@ -97,5 +97,11 @@
     "image": "images/combo_2999.jpeg",
     "spec": "中秋節限定",
     "price": "2999"
+  },
+  {
+    "name": "$3,999 烤肉組合",
+    "category": "中秋節烤肉專區",
+    "spec": "中秋節限定",
+    "price": "3999"
   }
 ]
