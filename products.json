@@ -237,5 +237,12 @@
     "category": "肉品｜牛肉",
     "image": "images/mtr23q23-7mr4ky8n.jpg",
     "spec": "200-300g/單片(秤重)"
+  },
+  {
+    "name": "中卷",
+    "category": "海鮮｜魷魚／中卷",
+    "image": "images/mtr3gpae-twxvud96.jpg",
+    "spec": "隻／包",
+    "price": "215"
   }
 ]
