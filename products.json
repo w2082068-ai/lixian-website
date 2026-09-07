@@ -1,5 +1,13 @@
 [
   {
+    "id": "c999",
+    "name": "$999 牛肉組合",
+    "category": "中秋節烤肉專區",
+    "image": "images/mtqw7ncf-b6bdpw6k.jpg",
+    "spec": "中秋節限定",
+    "price": "999"
+  },
+  {
     "id": "broccoli",
     "name": "冷凍青花菜",
     "category": "蔬菜類",
@@ -76,14 +84,6 @@
     "image": "images/mtqw45jr-zzg0uj61.jpg",
     "spec": "300g／包",
     "price": "135"
-  },
-  {
-    "id": "c999",
-    "name": "$999 牛肉組合",
-    "category": "中秋節烤肉專區",
-    "image": "images/mtqw7ncf-b6bdpw6k.jpg",
-    "spec": "中秋節限定",
-    "price": "999"
   },
   {
     "id": "c1999",
