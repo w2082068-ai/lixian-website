@@ -59,8 +59,7 @@
     "name": "Prime 無骨牛小排",
     "category": "肉品｜牛肉",
     "image": "images/prime_boneless_short_rib.jpeg",
-    "spec": "規格u3單片",
-    "price": "335"
+    "spec": "規格依重量／單片包裝"
   },
   {
     "id": "pork-chop",
@@ -74,37 +73,44 @@
     "id": "pork-bbq",
     "name": "老饕燒肉",
     "category": "肉品｜豬肉",
-    "spec": "規格依現貨",
+    "image": "images/mtqw45jr-zzg0uj61.jpg",
+    "spec": "300g／包",
     "price": "135"
   },
   {
     "id": "c999",
-    "name": "$999 烤肉組合",
+    "name": "$999 牛肉組合",
     "category": "中秋節烤肉專區",
-    "image": "images/combo_999_bbq.jpeg",
+    "image": "images/mtqw7ncf-b6bdpw6k.jpg",
     "spec": "中秋節限定",
     "price": "999"
   },
   {
     "id": "c1999",
+    "name": "$999 不吃牛組合",
+    "category": "中秋節烤肉專區",
+    "image": "images/mtqw9n5e-e1aoa9s5.jpg",
+    "spec": "中秋節限定",
+    "price": "999"
+  },
+  {
+    "id": "c2999",
     "name": "$1,999 烤肉組合",
     "category": "中秋節烤肉專區",
-    "image": "images/combo_1999.jpeg",
+    "image": "images/mtqwa7cj-v0bv4xdy.jpg",
     "spec": "中秋節限定",
     "price": "1999"
   },
   {
-    "id": "c2999",
     "name": "$2,999 烤肉組合",
     "category": "中秋節烤肉專區",
-    "image": "images/combo_2999.jpeg",
+    "image": "images/mtqwan0c-vuoc3nfe.jpg",
     "spec": "中秋節限定",
     "price": "2999"
   },
   {
     "name": "$3,999 烤肉組合",
     "category": "中秋節烤肉專區",
-    "spec": "中秋節限定",
-    "price": "3999"
+    "spec": "中秋節限定"
   }
 ]
