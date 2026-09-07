@@ -10,7 +10,8 @@
 <body>
 <header><h1>儷鮮嚴選｜菜單管理</h1><p>新增分類、上傳照片、編輯商品與價格。</p><a class="link" href="./" target="_blank" rel="noopener">查看官網 ↗</a></header>
 <main>
-<section class="box"><h2>登入管理與發布</h2><p>透過 Pages CMS 登入，編輯商品、價格、分類與照片。儲存後會更新官網；首次使用需要 GitHub 授權。</p><a class="link primary" href="https://app.pagescms.org/" target="_blank" rel="noopener noreferrer">登入 Pages CMS ↗</a><p class="note">選擇 w2082068-ai / lixian-website 與 main。下方保留本機草稿工具；兩種方式的草稿不會自動同步。</p></section>
+<section class="box"><h2>登入管理與發布</h2><p>透過 Pages CMS 登入，編輯商品、價格、分類與照片。儲存後會更新官網；首次使用需要 GitHub 授權。</p><a class="link primary" href="https://app.pagescms.org/w2082068-ai/lixian-website/main/file/products" target="_blank" rel="noopener noreferrer">開啟商品管理與發布 ↗</a><p class="note">在商品或分類管理中修改後，按 Save 即會提交更新，等待部署完成後重新整理官網。下方本機草稿不會自動同步至線上管理。</p><p><a class="link" href="https://app.pagescms.org/w2082068-ai/lixian-website/main/file/categories" target="_blank" rel="noopener noreferrer">開啟分類管理 ↗</a></p></section>
+<details><summary>本機草稿與備份工具（選用）</summary><p class="note">日常修改與發布請使用上方商品管理。此處可保留既有草稿及下載備份。</p>
 <p id="message" role="status">正在載入菜單…</p>
 <fieldset id="editor" disabled>
 <section class="box">
@@ -28,7 +29,7 @@
 <label>GitHub 連線憑證<input id="token" type="password" autocomplete="off" placeholder="已設定的 GitHub 連線憑證"></label>
 <button id="publish" type="button" class="primary">發布全部變更到官網</button></details>
 </section>
-</fieldset>
+</fieldset></details>
 </main>
 <script>
 "use strict";
