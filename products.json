@@ -111,6 +111,14 @@
   {
     "name": "$3,999 烤肉組合",
     "category": "中秋節烤肉專區",
-    "spec": "中秋節限定"
+    "spec": "中秋節限定",
+    "price": "3999"
+  },
+  {
+    "name": "精選紐頂級西蘭牛舌",
+    "category": "肉品｜牛肉",
+    "image": "images/mtqxf7un-1h7duoev.jpg",
+    "spec": "200g／盒",
+    "price": "295"
   }
 ]
