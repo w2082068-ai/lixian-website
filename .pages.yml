@@ -12,11 +12,8 @@ content:
     list: true
     fields:
       - name: id
-        type: uuid
+        type: string
         hidden: true
-        options:
-          editable: false
-          generate: false
       - name: name
         label: 商品名稱
         type: string
