@@ -16,6 +16,21 @@
     "price": "999"
   },
   {
+    "id": "c2999",
+    "name": "$1,999 烤肉組合",
+    "category": "中秋節烤肉專區",
+    "image": "images/mtqwa7cj-v0bv4xdy.jpg",
+    "spec": "中秋節限定",
+    "price": "1999"
+  },
+  {
+    "name": "$2,999 烤肉組合",
+    "category": "中秋節烤肉專區",
+    "image": "images/mtqwan0c-vuoc3nfe.jpg",
+    "spec": "中秋節限定",
+    "price": "2999"
+  },
+  {
     "id": "broccoli",
     "name": "冷凍青花菜",
     "category": "蔬菜類",
@@ -92,21 +107,6 @@
     "image": "images/mtqw45jr-zzg0uj61.jpg",
     "spec": "300g／包",
     "price": "135"
-  },
-  {
-    "id": "c2999",
-    "name": "$1,999 烤肉組合",
-    "category": "中秋節烤肉專區",
-    "image": "images/mtqwa7cj-v0bv4xdy.jpg",
-    "spec": "中秋節限定",
-    "price": "1999"
-  },
-  {
-    "name": "$2,999 烤肉組合",
-    "category": "中秋節烤肉專區",
-    "image": "images/mtqwan0c-vuoc3nfe.jpg",
-    "spec": "中秋節限定",
-    "price": "2999"
   },
   {
     "name": "$3,999 烤肉組合",
