@@ -3,6 +3,7 @@
     "id": "broccoli",
     "name": "冷凍青花菜",
     "category": "蔬菜類",
+    "image": "images/mtquxa1u-3cepv4pa.jpg",
     "spec": "1000g ±5%／包",
     "price": "89"
   },
@@ -24,24 +25,25 @@
   },
   {
     "id": "sweetfish",
-    "name": "香魚",
+    "name": "香魚12P",
     "category": "海鮮｜魚類",
+    "image": "images/mtquyb9p-001yvppb.jpg",
     "spec": "900±15g／盒",
     "price": "380"
   },
   {
     "id": "cod",
-    "name": "厚切鱈魚片",
+    "name": "頂級格凌蘭厚切鱈魚",
     "category": "海鮮｜魚類",
-    "image": "images/thick_cut_cod_250g.jpeg",
-    "spec": "250g／包",
-    "price": "140"
+    "image": "images/mtqvcnan-e6m8sac9.jpg",
+    "spec": "250g／包"
   },
   {
     "id": "shrimp",
     "name": "活凍紅太陽白蝦",
     "category": "海鮮｜蝦類",
-    "spec": "850g／包",
+    "image": "images/mtqvjyl3-ex6yop2o.jpg",
+    "spec": "淨重650g/包",
     "price": "325"
   },
   {
@@ -49,14 +51,15 @@
     "name": "日本生食級4S干貝",
     "category": "海鮮｜貝類",
     "image": "images/japan_4s_scallop_500g.jpeg",
-    "spec": "500g／包"
+    "spec": "500g／包",
+    "price": "999"
   },
   {
     "id": "prime-rib",
     "name": "Prime 無骨牛小排",
     "category": "肉品｜牛肉",
     "image": "images/prime_boneless_short_rib.jpeg",
-    "spec": "規格依現貨",
+    "spec": "規格u3單片",
     "price": "335"
   },
   {
