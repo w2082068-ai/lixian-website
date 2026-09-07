@@ -87,10 +87,10 @@
   },
   {
     "id": "prime-rib",
-    "name": "Prime 翼板牛排",
+    "name": "Prime 無骨牛小排",
     "category": "肉品｜牛肉",
-    "image": "images/prime_boneless_short_rib.jpeg",
-    "spec": "規格依重量／單片包裝"
+    "image": "images/mtr37xge-yhzak2bb.jpg",
+    "spec": "依重量／單片包裝"
   },
   {
     "id": "pork-chop",
@@ -237,9 +237,5 @@
     "category": "肉品｜牛肉",
     "image": "images/mtr23q23-7mr4ky8n.jpg",
     "spec": "200-300g/單片(秤重)"
-  },
-  {
-    "name": "PRIME無骨牛小排",
-    "category": "肉品｜牛肉"
   }
 ]
