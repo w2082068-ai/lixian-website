@@ -31,6 +31,12 @@
     "price": "2999"
   },
   {
+    "name": "$4,999 烤肉組合",
+    "category": "中秋節烤肉專區",
+    "spec": "中秋節限定",
+    "price": "4999"
+  },
+  {
     "id": "broccoli",
     "name": "冷凍青花菜",
     "category": "蔬菜類",
@@ -107,13 +113,6 @@
     "image": "images/mtqw45jr-zzg0uj61.jpg",
     "spec": "300g／包",
     "price": "135"
-  },
-  {
-    "name": "$4,999 烤肉組合",
-    "category": "中秋節烤肉專區",
-    "image": "images/mtsijrum-nsu6u8mv.jpg",
-    "spec": "中秋節限定",
-    "price": "4999"
   },
   {
     "name": "精選紐頂級西蘭牛舌",
