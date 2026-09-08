@@ -279,5 +279,12 @@
     "category": "肉品｜鴨肉",
     "image": "images/mtsikyr0-drvdoi0q.jpg",
     "spec": "包／片"
+  },
+  {
+    "name": "PRIME無骨牛",
+    "category": "肉品｜牛肉",
+    "image": "images/mtsivs5a-ljyev4jd.jpg",
+    "spec": "150g／盒",
+    "price": "295"
   }
 ]
