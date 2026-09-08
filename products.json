@@ -289,7 +289,14 @@
   {
     "name": "Choice板腱",
     "category": "肉品｜牛肉",
+    "image": "images/mtsj4q0t-ycmpzsfh.jpg",
     "spec": "150g／盒",
     "price": "135"
+  },
+  {
+    "name": "PRIME翼板",
+    "category": "肉品｜牛肉",
+    "spec": "150g／盒",
+    "price": "199"
   }
 ]
