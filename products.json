@@ -324,7 +324,14 @@
   {
     "name": "日本A5和牛梅花心",
     "category": "肉品｜牛肉",
+    "image": "images/mtsjts42-9hkknxaa.jpg",
     "spec": "100g／盒",
     "price": "190"
+  },
+  {
+    "name": "CHOICE帶骨牛小排",
+    "category": "肉品｜牛肉",
+    "spec": "500g／包",
+    "price": "540"
   }
 ]
