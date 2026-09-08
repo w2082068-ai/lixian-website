@@ -109,10 +109,11 @@
     "price": "135"
   },
   {
-    "name": "$3,999 烤肉組合",
+    "name": "$4,999 烤肉組合",
     "category": "中秋節烤肉專區",
+    "image": "images/mtsijrum-nsu6u8mv.jpg",
     "spec": "中秋節限定",
-    "price": "3999"
+    "price": "4999"
   },
   {
     "name": "精選紐頂級西蘭牛舌",
