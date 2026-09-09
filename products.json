@@ -144,6 +144,13 @@
     "price": "105"
   },
   {
+    "name": "PRIME翼板",
+    "category": "肉品｜牛肉",
+    "image": "images/mtsj8np7-6t9kzh88.jpg",
+    "spec": "150g／盒",
+    "price": "199"
+  },
+  {
     "name": "台南虱目魚丸",
     "category": "海鮮｜火鍋料／丸類",
     "image": "images/mtqz67yh-q64eiwee.jpg",
@@ -293,13 +300,6 @@
     "image": "images/mtsj4q0t-ycmpzsfh.jpg",
     "spec": "150g／盒",
     "price": "135"
-  },
-  {
-    "name": "PRIME翼板",
-    "category": "肉品｜牛肉",
-    "image": "images/mtsj8np7-6t9kzh88.jpg",
-    "spec": "150g／盒",
-    "price": "199"
   },
   {
     "name": "Choice背肩",
