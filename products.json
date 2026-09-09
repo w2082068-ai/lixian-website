@@ -84,14 +84,6 @@
     "price": "325"
   },
   {
-    "id": "broccoli",
-    "name": "冷凍青花菜",
-    "category": "蔬菜類",
-    "image": "images/mtquxa1u-3cepv4pa.jpg",
-    "spec": "1000g ±5%／包",
-    "price": "89"
-  },
-  {
     "id": "scallop",
     "name": "日本生食級4S干貝",
     "category": "海鮮｜貝類",
@@ -252,6 +244,14 @@
     "category": "肉品｜牛肉",
     "image": "images/mtr23q23-7mr4ky8n.jpg",
     "spec": "200-300g/單片(秤重)"
+  },
+  {
+    "id": "broccoli",
+    "name": "冷凍青花菜",
+    "category": "蔬菜類",
+    "image": "images/mtquxa1u-3cepv4pa.jpg",
+    "spec": "1000g ±5%／包",
+    "price": "89"
   },
   {
     "name": "中卷",
