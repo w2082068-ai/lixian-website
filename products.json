@@ -38,12 +38,11 @@
     "price": "4999"
   },
   {
-    "id": "broccoli",
-    "name": "冷凍青花菜",
-    "category": "蔬菜類",
-    "image": "images/mtquxa1u-3cepv4pa.jpg",
-    "spec": "1000g ±5%／包",
-    "price": "89"
+    "name": "特選紐西蘭法式羊排",
+    "category": "肉品｜羊肉",
+    "image": "images/mtqxzhfu-9f3h4o4a.jpg",
+    "spec": "500g／包(約5-8隻)",
+    "price": "509"
   },
   {
     "id": "clam",
@@ -83,6 +82,14 @@
     "image": "images/mtqvjyl3-ex6yop2o.jpg",
     "spec": "淨重650g/包",
     "price": "325"
+  },
+  {
+    "id": "broccoli",
+    "name": "冷凍青花菜",
+    "category": "蔬菜類",
+    "image": "images/mtquxa1u-3cepv4pa.jpg",
+    "spec": "1000g ±5%／包",
+    "price": "89"
   },
   {
     "id": "scallop",
@@ -135,13 +142,6 @@
     "image": "images/mtqxtcvk-nahijd98.jpg",
     "spec": "150g／包",
     "price": "105"
-  },
-  {
-    "name": "特選紐西蘭法式羊排",
-    "category": "肉品｜羊肉",
-    "image": "images/mtqxzhfu-9f3h4o4a.jpg",
-    "spec": "500g／包(約5-8隻)",
-    "price": "509"
   },
   {
     "name": "台南虱目魚丸",
@@ -204,6 +204,13 @@
     "category": "肉品｜豬肉",
     "image": "images/mtr13ipc-qhjls6dg.jpg",
     "spec": "秤重／包"
+  },
+  {
+    "name": "PRIME無骨牛",
+    "category": "肉品｜牛肉",
+    "image": "images/mtsivs5a-ljyev4jd.jpg",
+    "spec": "150g／盒",
+    "price": "295"
   },
   {
     "name": "宏裕行花枝蝦排",
@@ -279,13 +286,6 @@
     "category": "肉品｜鴨肉",
     "image": "images/mtsikyr0-drvdoi0q.jpg",
     "spec": "包／片"
-  },
-  {
-    "name": "PRIME無骨牛",
-    "category": "肉品｜牛肉",
-    "image": "images/mtsivs5a-ljyev4jd.jpg",
-    "spec": "150g／盒",
-    "price": "295"
   },
   {
     "name": "Choice板腱",
