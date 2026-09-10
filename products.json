@@ -38,18 +38,18 @@
     "price": "4999"
   },
   {
-    "name": "高粱香腸",
-    "category": "肉品｜豬肉",
-    "image": "images/mtvbs1qs-lxzok4wy.jpg",
-    "spec": "10隻／包",
-    "price": "250"
-  },
-  {
     "name": "PRIME翼板",
     "category": "肉品｜牛肉",
     "image": "images/mtsj8np7-6t9kzh88.jpg",
     "spec": "150g／盒",
     "price": "199"
+  },
+  {
+    "name": "高粱香腸",
+    "category": "肉品｜豬肉",
+    "image": "images/mtvbs1qs-lxzok4wy.jpg",
+    "spec": "10隻／包",
+    "price": "250"
   },
   {
     "id": "clam",
