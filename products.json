@@ -38,14 +38,6 @@
     "price": "4999"
   },
   {
-    "id": "clam",
-    "name": "熟文蛤",
-    "category": "海鮮｜貝類",
-    "image": "images/cooked_clams_500g.jpeg",
-    "spec": "500g／包",
-    "price": "155"
-  },
-  {
     "name": "高粱香腸",
     "category": "肉品｜豬肉",
     "image": "images/mtvbs1qs-lxzok4wy.jpg",
@@ -53,12 +45,19 @@
     "price": "250"
   },
   {
-    "id": "lobster",
-    "name": "龍蝦尾",
-    "category": "海鮮｜龍蝦",
-    "image": "images/lobster_tail_250g.jpeg",
-    "spec": "250g／包",
-    "price": "550"
+    "name": "PRIME翼板",
+    "category": "肉品｜牛肉",
+    "image": "images/mtsj8np7-6t9kzh88.jpg",
+    "spec": "150g／盒",
+    "price": "199"
+  },
+  {
+    "id": "clam",
+    "name": "熟文蛤",
+    "category": "海鮮｜貝類",
+    "image": "images/cooked_clams_500g.jpeg",
+    "spec": "500g／包",
+    "price": "155"
   },
   {
     "name": "特選紐西蘭法式羊排",
@@ -81,6 +80,14 @@
     "category": "海鮮｜魚類",
     "image": "images/mtqvcnan-e6m8sac9.jpg",
     "spec": "250g／包"
+  },
+  {
+    "id": "lobster",
+    "name": "龍蝦尾",
+    "category": "海鮮｜龍蝦",
+    "image": "images/lobster_tail_250g.jpeg",
+    "spec": "250g／包",
+    "price": "550"
   },
   {
     "id": "shrimp",
@@ -134,13 +141,6 @@
     "image": "images/mtqxtcvk-nahijd98.jpg",
     "spec": "150g／包",
     "price": "105"
-  },
-  {
-    "name": "PRIME翼板",
-    "category": "肉品｜牛肉",
-    "image": "images/mtsj8np7-6t9kzh88.jpg",
-    "spec": "150g／盒",
-    "price": "199"
   },
   {
     "name": "台南虱目魚丸",
