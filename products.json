@@ -53,6 +53,13 @@
     "price": "155"
   },
   {
+    "name": "高粱香腸",
+    "category": "肉品｜豬肉",
+    "image": "images/mtvbs1qs-lxzok4wy.jpg",
+    "spec": "10隻／包",
+    "price": "250"
+  },
+  {
     "id": "lobster",
     "name": "龍蝦尾",
     "category": "海鮮｜龍蝦",
@@ -426,13 +433,6 @@
     "image": "images/mtvbgjap-u4huofnu.jpg",
     "spec": "150g／盒",
     "price": "75"
-  },
-  {
-    "name": "高粱香腸",
-    "category": "肉品｜豬肉",
-    "image": "images/mtvbs1qs-lxzok4wy.jpg",
-    "spec": "10隻／包",
-    "price": "250"
   },
   {
     "name": "冷凍小卷",
