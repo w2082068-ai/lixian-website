@@ -397,5 +397,12 @@
     "image": "images/mtvae90f-inrsqlnx.jpg",
     "spec": "內容量2800g／包",
     "price": "550"
+  },
+  {
+    "name": "松阪豬",
+    "category": "肉品｜豬肉",
+    "image": "images/mtvao9h9-jrakdf4r.jpg",
+    "spec": "150g／盒",
+    "price": "135"
   }
 ]
