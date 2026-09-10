@@ -390,5 +390,12 @@
     "image": "images/mtv17txw-bac1shc5.jpg",
     "spec": "1公斤／袋",
     "price": "350"
+  },
+  {
+    "name": "胡椒鴨",
+    "category": "火鍋料理包",
+    "image": "images/mtvae90f-inrsqlnx.jpg",
+    "spec": "內容量2800g／包",
+    "price": "550"
   }
 ]
