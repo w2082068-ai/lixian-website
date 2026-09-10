@@ -92,13 +92,6 @@
     "price": "999"
   },
   {
-    "id": "prime-rib",
-    "name": "Prime 無骨牛小排",
-    "category": "肉品｜牛肉",
-    "image": "images/mtr37xge-yhzak2bb.jpg",
-    "spec": "依重量／單片包裝"
-  },
-  {
     "id": "pork-chop",
     "name": "法式豬戰斧",
     "category": "肉品｜豬肉",
@@ -203,6 +196,13 @@
     "category": "肉品｜豬肉",
     "image": "images/mtr13ipc-qhjls6dg.jpg",
     "spec": "秤重／包"
+  },
+  {
+    "id": "prime-rib",
+    "name": "Prime 無骨牛小排",
+    "category": "肉品｜牛肉",
+    "image": "images/mtr37xge-yhzak2bb.jpg",
+    "spec": "依重量／單片包裝"
   },
   {
     "name": "PRIME無骨牛",
