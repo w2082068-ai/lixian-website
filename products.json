@@ -38,13 +38,6 @@
     "price": "4999"
   },
   {
-    "name": "特選紐西蘭法式羊排",
-    "category": "肉品｜羊肉",
-    "image": "images/mtqxzhfu-9f3h4o4a.jpg",
-    "spec": "500g／包(約5-8隻)",
-    "price": "509"
-  },
-  {
     "id": "clam",
     "name": "熟文蛤",
     "category": "海鮮｜貝類",
@@ -66,6 +59,13 @@
     "image": "images/lobster_tail_250g.jpeg",
     "spec": "250g／包",
     "price": "550"
+  },
+  {
+    "name": "特選紐西蘭法式羊排",
+    "category": "肉品｜羊肉",
+    "image": "images/mtqxzhfu-9f3h4o4a.jpg",
+    "spec": "500g／包(約5-8隻)",
+    "price": "509"
   },
   {
     "id": "sweetfish",
