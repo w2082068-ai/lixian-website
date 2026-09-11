@@ -14,6 +14,12 @@ content:
       - name: id
         type: string
         hidden: true
+      - name: pageId
+        type: uuid
+        hidden: true
+        options:
+          editable: false
+          generate: false
       - name: name
         label: 商品名稱
         type: string
@@ -24,8 +30,20 @@ content:
         required: true
         description: 請填入分類管理中的名稱；相同名稱的商品會歸在同一類。
       - name: image
-        label: 商品照片
+        label: 商品封面照片
         type: image
+      - name: images
+        label: 更多商品照片
+        type: image
+        description: 可上傳或選取多張照片，最多 10 張；封面照片會自動顯示在第一張。
+        options:
+          multiple:
+            max: 10
+          unique: true
+      - name: description
+        label: 商品詳細介紹
+        type: text
+        description: 可分行填寫商品特色、內容物、保存方式與料理建議；請只填寫已確認的資訊。
       - name: spec
         label: 商品規格
         type: string
@@ -47,3 +65,4 @@ content:
         type: string
         list: true
         description: 可新增、刪除及排列分類。更名時請同步修改相關商品的分類名稱。請勿使用「全部」。
+

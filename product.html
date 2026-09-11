@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="儷鮮嚴選商品介紹、照片與規格，歡迎透過官方 LINE 洽詢訂購。">
+<title>商品介紹｜儷鮮嚴選</title>
+<link rel="stylesheet" href="./product.css">
+<script src="./catalog.js" defer></script><script src="./product.js" defer></script>
+</head>
+<body>
+<header><a class="brand" href="./">儷鮮嚴選<span>MEAT &amp; SEAFOOD</span></a><a href="./" class="back">返回商品列表</a></header>
+<main>
+<p id="status" role="status">商品載入中…</p>
+<section id="product" class="product" hidden>
+<div class="gallery">
+<button id="main-photo" class="main-photo" type="button" aria-label="放大商品照片" disabled><span>商品照片準備中</span></button>
+<div class="gallery-tools"><button id="previous" type="button" aria-label="上一張照片">上一張</button><p id="photo-count" aria-live="polite"></p><button id="next" type="button" aria-label="下一張照片">下一張</button></div>
+<div id="thumbnails" class="thumbnails" aria-label="商品照片選擇"></div>
+<p id="photo-tip" class="hint">點圖片可放大查看；手機也可用雙指向外張開放大。</p>
+</div>
+<div class="information"><a id="category" class="category" href="./"></a><h1 id="name"></h1><p id="spec" class="spec"></p><p id="price" class="price"></p>
+<section class="description"><h2>商品介紹</h2><div id="description"></div></section>
+<p class="hint">訂購數量、庫存與取貨方式，請透過官方 LINE 確認。</p>
+</div>
+</section>
+<div id="error" class="error" hidden><h1>暫時無法顯示商品</h1><p id="error-message"></p><button id="retry" type="button">重新載入</button> <a href="./">返回商品列表</a></div>
+<noscript><p>請開啟 JavaScript 查看商品，或透過官方 LINE 洽詢訂購。</p></noscript>
+</main>
+<footer class="order"><a id="order-link" href="https://line.me/R/ti/p/@340dfrur" target="_blank" rel="noopener noreferrer">聯絡官方 LINE 訂購 <span>@340dfrur</span></a></footer>
+<dialog id="lightbox" aria-label="放大商品照片"><div class="lightbox-tools"><button id="zoom-out" type="button" aria-label="縮小照片">－</button><span id="zoom-value" aria-live="polite">100%</span><button id="zoom-in" type="button" aria-label="放大照片">＋</button><button id="close-lightbox" type="button">關閉</button></div><div id="zoom-area" class="zoom-area"><img id="zoom-photo" alt=""></div><div class="lightbox-navigation"><button id="lightbox-previous" type="button">上一張</button><span id="lightbox-count" aria-live="polite"></span><button id="lightbox-next" type="button">下一張</button></div></dialog>
+</body></html>

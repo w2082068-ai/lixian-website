@@ -10,7 +10,7 @@
 <body>
 <header><h1>儷鮮嚴選｜菜單管理</h1><p>新增分類、上傳照片、編輯商品與價格。</p><a class="link" href="./" target="_blank" rel="noopener">查看官網 ↗</a></header>
 <main>
-<section class="box"><h2>登入管理與發布</h2><p>透過 Pages CMS 登入，編輯商品、價格、分類與照片。儲存後會更新官網；首次使用需要 GitHub 授權。</p><a class="link primary" href="https://app.pagescms.org/w2082068-ai/lixian-website/main/file/products" target="_blank" rel="noopener noreferrer">開啟商品管理與發布 ↗</a><p class="note">在商品或分類管理中修改後，按 Save 即會提交更新，等待部署完成後重新整理官網。下方本機草稿不會自動同步至線上管理。</p><p><a class="link" href="https://app.pagescms.org/w2082068-ai/lixian-website/main/file/categories" target="_blank" rel="noopener noreferrer">開啟分類管理 ↗</a></p></section>
+<section class="box"><h2>登入管理與發布</h2><p>透過 Pages CMS 登入，編輯商品、價格、分類、封面照片、多張照片與詳細介紹。儲存後會更新官網；首次使用需要 GitHub 授權。</p><a class="link primary" href="https://app.pagescms.org/w2082068-ai/lixian-website/main/file/products" target="_blank" rel="noopener noreferrer">開啟商品管理與發布 ↗</a><p class="note">在商品或分類管理中修改後，按 Save 即會提交更新，等待部署完成後重新整理官網。下方本機草稿不會自動同步至線上管理。</p><p><a class="link" href="https://app.pagescms.org/w2082068-ai/lixian-website/main/file/categories" target="_blank" rel="noopener noreferrer">開啟分類管理 ↗</a></p></section>
 <details><summary>本機草稿與備份工具（選用）</summary><p class="note">日常修改與發布請使用上方商品管理。此處可保留既有草稿及下載備份。</p>
 <p id="message" role="status">正在載入菜單…</p>
 <fieldset id="editor" disabled>
@@ -112,6 +112,7 @@ function renderProducts(){
   categories.forEach(c=>{const option=node("option",c);option.value=c;select.append(option);});select.value=p.category;
   select.addEventListener("change",()=>{p.category=select.value;dirty=true;});label.append(select);
   row.append(label,field("價格（NT$，留白代表請洽 LINE）",p.price,v=>p.price=v,"number"));right.append(row,field("規格",p.spec,v=>p.spec=v));
+  const intro=node("label","商品詳細介紹");const textarea=node("textarea");textarea.value=p.description||"";textarea.rows=6;textarea.style.cssText="width:100%;font:inherit;padding:10px;border:1px solid #d8cbbb;border-radius:9px";textarea.addEventListener("input",()=>{p.description=textarea.value;dirty=true;});intro.append(textarea);right.append(intro,node("p","更多商品照片請在上方線上商品管理編輯；此草稿會保留已載入的多張照片。","note"));
   right.append(button("刪除商品",async()=>{if(!await confirmAction("確定刪除「"+(p.name||"未命名商品")+"」？"))return;products=products.filter(item=>item.id!==p.id);delete photos[p.id];dirty=true;renderProducts();saveDraft();},"danger"));
   article.append(left,right);$("products").append(article);
  });
@@ -139,7 +140,7 @@ async function api(path,method="GET",body){
 }
 async function publish(){
  try{
-  validatePublish();if(!$("token").value.trim())throw new Error("尚未設定發布連線。可以先儲存草稿或下載菜單備份，交由協助者發布。");
+  validatePublish();for(const p of products){if(!p.pageId)p.pageId=crypto.randomUUID();}if(!$("token").value.trim())throw new Error("尚未設定發布連線。可以先儲存草稿或下載菜單備份，交由協助者發布。");
   $("editor").disabled=true;message("正在確認線上版本…");
   const head=await api("/git/ref/heads/main");
   const current=await api("/git/commits/"+head.object.sha);
@@ -158,7 +159,7 @@ async function publish(){
  }catch(error){message(error.message);}finally{$("editor").disabled=false;}
 }
 $("add-category").addEventListener("click",()=>{const name=$("new-category").value.trim();if(!name || name==="全部")return message("請輸入新分類名稱，且不可使用「全部」。");if(categories.includes(name))return message("此分類名稱已存在。");categories.push(name);$("new-category").value="";dirty=true;render();saveDraft();});
-$("add-product").addEventListener("click",()=>{if(!categories.length)return message("請先新增一個分類。");products.push({id:"p-"+crypto.randomUUID(),name:"",category:categories[0],spec:"",price:"",image:""});dirty=true;renderProducts();$("products").lastElementChild.scrollIntoView({behavior:"smooth",block:"center"});});
+$("add-product").addEventListener("click",()=>{if(!categories.length)return message("請先新增一個分類。");products.push({pageId:crypto.randomUUID(),id:"p-"+crypto.randomUUID(),name:"",category:categories[0],spec:"",price:"",image:""});dirty=true;renderProducts();$("products").lastElementChild.scrollIntoView({behavior:"smooth",block:"center"});});
 $("save").addEventListener("click",saveDraft);$("preview-button").addEventListener("click",preview);$("publish").addEventListener("click",publish);
 $("export").addEventListener("click",()=>{const blob=new Blob([JSON.stringify(snapshot(),null,2)],{type:"application/json"});const url=URL.createObjectURL(blob);const a=node("a");a.href=url;a.download="儷鮮嚴選-菜單備份-"+new Date().toISOString().slice(0,10)+".json";a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);message("已下載菜單備份，包含草稿與本次上傳的照片。");});
 $("restore").addEventListener("click",()=>$("backup-file").click());
@@ -184,3 +185,4 @@ async function init(ignoreDraft=false){
 init();
 </script>
 </body></html>
+
