@@ -5,6 +5,16 @@
     "name": "$999 牛肉組合",
     "category": "中秋節烤肉專區",
     "image": "images/mtqw7ncf-b6bdpw6k.jpg",
+    "images": [
+      "images/mtww1jxv-kjsmcppi.jpg",
+      "images/mtww20n2-lxn8nbf0.jpg",
+      "images/mtww28sq-6irj05bn.jpg",
+      "images/mtww2cp7-knusxvq6.jpg",
+      "images/mtww2g51-jfyde5wo.jpg",
+      "images/mtww15xe-2bnz4x8i.jpg",
+      "images/mtww2u1t-3juq0c0y.jpg",
+      "images/mtww3ha7-t3ieocbv.jpg"
+    ],
     "spec": "中秋節限定",
     "price": "999"
   },
