@@ -20,7 +20,7 @@
 </div>
 <div class="information"><a id="category" class="category" href="./"></a><h1 id="name"></h1><p id="spec" class="spec"></p><p id="price" class="price"></p>
 <section class="description"><h2>商品介紹</h2><div id="description"></div></section>
-<p class="hint">訂購數量、庫存與取貨方式，請透過官方 LINE 確認。</p>
+<p><a id="checkout-link" href="./checkout.html">加入購物車／網站訂購 →</a></p><script>document.getElementById("checkout-link").href="./checkout.html?product="+encodeURIComponent(new URLSearchParams(location.search).get("id")||"");</script><p class="hint">庫存與配送時間由店家確認，也歡迎透過官方 LINE 洽詢。</p>
 </div>
 </section>
 <div id="error" class="error" hidden><h1>暫時無法顯示商品</h1><p id="error-message"></p><button id="retry" type="button">重新載入</button> <a href="./">返回商品列表</a></div>
@@ -29,3 +29,4 @@
 <footer class="order"><a id="order-link" href="https://line.me/R/ti/p/@340dfrur" target="_blank" rel="noopener noreferrer">聯絡官方 LINE 訂購 <span>@340dfrur</span></a></footer>
 <dialog id="lightbox" aria-label="放大商品照片"><div class="lightbox-tools"><button id="zoom-out" type="button" aria-label="縮小照片">－</button><span id="zoom-value" aria-live="polite">100%</span><button id="zoom-in" type="button" aria-label="放大照片">＋</button><button id="close-lightbox" type="button">關閉</button></div><div id="zoom-area" class="zoom-area"><img id="zoom-photo" alt=""></div><div class="lightbox-navigation"><button id="lightbox-previous" type="button">上一張</button><span id="lightbox-count" aria-live="polite"></span><button id="lightbox-next" type="button">下一張</button></div></dialog>
 </body></html>
+
