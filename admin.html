@@ -5,13 +5,13 @@
 <meta name="robots" content="noindex,nofollow"><title>儷鮮嚴選｜菜單管理</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f7f2ea;color:#4c392d;font-family:system-ui,-apple-system,"Noto Sans TC",sans-serif;line-height:1.6}header{background:#fffdf9;border-bottom:1px solid #e4d8c7;padding:22px max(18px,calc((100vw - 1000px)/2))}h1{font-size:25px;margin:0;letter-spacing:3px}header p{margin:4px 0;color:#796958}main{max-width:1036px;margin:auto;padding:20px 18px 60px}.box{background:#fffdf9;border:1px solid #e4d8c7;border-radius:18px;padding:20px;margin-bottom:18px}h2{font-size:19px;margin:0 0 12px}button,.link{border:1px solid #d8cbbb;border-radius:10px;padding:10px 16px;background:#fffaf3;color:#4c392d;font:inherit;cursor:pointer;text-decoration:none;display:inline-block}button:disabled{opacity:.5;cursor:wait}.primary{background:#4c392d;color:#fff}.danger{color:#943d36}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #a88758;outline-offset:3px}.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.note,small{color:#796958;font-size:13px}.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}label{display:block;font-size:14px}input,select{display:block;width:100%;border:1px solid #d8cbbb;border-radius:9px;padding:10px;background:white;color:#4c392d;font:inherit;margin:5px 0 12px}.product{display:grid;grid-template-columns:150px 1fr;gap:18px;border-top:1px solid #e4d8c7;padding:22px 0}.photo{width:100%;aspect-ratio:1;object-fit:contain;background:#eee5da;border-radius:12px}.photo-note{aspect-ratio:1;background:#eee5da;border-radius:12px;display:grid;place-items:center;font-size:13px;color:#796958}.category{display:flex;align-items:center;gap:8px;margin-bottom:8px}.category input{margin:0;flex:1;min-width:0}.category button{white-space:nowrap}.category-name{flex:1;overflow-wrap:anywhere}.preview-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.preview-card{border:1px solid #e4d8c7;border-radius:12px;padding:12px;overflow-wrap:anywhere}.preview-card strong{display:block}.preview-card img{width:100%;aspect-ratio:1;object-fit:contain}.price{color:#986d32;font-weight:700}#message{white-space:pre-line}summary{cursor:pointer}fieldset{border:0;margin:0;padding:0;min-width:0}@media(max-width:600px){.row{grid-template-columns:1fr;gap:0}.product{grid-template-columns:1fr}.product-photo{max-width:220px}.preview-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.category{flex-wrap:wrap}}
-</style>
+[hidden]{display:none!important}.product{grid-template-columns:80px 1fr}.product>details{grid-column:1/-1}.product>details[open]{border-top:1px solid #e4d8c7;padding-top:12px}.product>details>.product-photo{max-width:180px}#product-count{font-size:14px}#message{position:sticky;top:0;background:#fff4dc;padding:12px;z-index:2}</style>
 </head>
 <body><p style="text-align:center;padding:16px"><a href="./orders-admin.html">訂單管理：登入查看訂單、核款與出貨 →</a></p>
 <header><h1>儷鮮嚴選｜菜單管理</h1><p>新增分類、上傳照片、編輯商品與價格。</p><a class="link" href="./" target="_blank" rel="noopener">查看官網 ↗</a></header>
 <main>
 <section class="box"><h2>登入管理與發布</h2><p>透過 Pages CMS 登入，編輯商品、價格、分類、封面照片、多張照片與詳細介紹。儲存後會更新官網；首次使用需要 GitHub 授權。</p><a class="link primary" href="https://app.pagescms.org/w2082068-ai/lixian-website/main/file/products" target="_blank" rel="noopener noreferrer">開啟商品管理與發布 ↗</a><p class="note">在商品或分類管理中修改後，按 Save 即會提交更新，等待部署完成後重新整理官網。下方本機草稿不會自動同步至線上管理。</p><p><a class="link" href="https://app.pagescms.org/w2082068-ai/lixian-website/main/file/categories" target="_blank" rel="noopener noreferrer">開啟分類管理 ↗</a></p></section>
-<details><summary>本機草稿與備份工具（選用）</summary><p class="note">日常修改與發布請使用上方商品管理。此處可保留既有草稿及下載備份。</p>
+<details open><summary>快速搜尋與修改商品</summary><p class="note">可搜尋名稱、規格或分類並直接改價。修改先保留在草稿；發布需使用下方既有 GitHub 發布連線，或透過 Pages CMS 修改並存檔。</p>
 <p id="message" role="status">正在載入菜單…</p>
 <fieldset id="editor" disabled>
 <section class="box">
@@ -19,7 +19,7 @@
 <div class="toolbar"><label style="flex:1">新分類名稱<input id="new-category" placeholder="例如：節慶禮盒"></label><button id="add-category" type="button">新增分類</button></div>
 <p class="note">修改分類名稱會同步更新該分類的商品。請先移走分類內的商品，再刪除分類。</p>
 </section>
-<section class="box"><div class="toolbar"><h2 style="flex:1">商品管理</h2><button id="add-product" type="button">＋ 新增商品</button></div><div id="products"></div></section>
+<section class="box"><div class="toolbar"><h2 style="flex:1">商品管理</h2><button id="add-product" type="button">＋ 新增商品</button></div><div class="row"><label>快速搜尋商品<input id="product-search" type="search" placeholder="輸入商品名稱、規格或分類"></label><label>篩選分類<select id="category-filter"><option value="">全部分類</option></select></label></div><div class="toolbar"><button id="clear-product-search" type="button">清除搜尋</button><button id="quick-save" type="button">儲存草稿</button><span id="product-count" role="status"></span></div><p class="note">價格留白代表請洽 LINE。搜尋不會移除商品；展開「編輯詳細資料」可修改照片、名稱與介紹。</p><div id="products"></div></section>
 <section class="box"><h2>儲存與預覽</h2><div class="toolbar"><button id="save" type="button">儲存草稿</button><button id="reload-online" type="button">載入官網版本</button><button id="preview-button" type="button">預覽菜單</button><button id="export" type="button">下載菜單備份</button><button id="restore" type="button">匯入菜單備份</button></div>
 <input id="backup-file" type="file" accept=".json,application/json" hidden>
 <p class="note">草稿只保存在目前瀏覽器，不會自動更新官網。下載備份可保存商品、分類與本次上傳的照片，交由協助者發布。</p>
@@ -101,7 +101,10 @@ async function pickPhoto(file,p,container){
   dirty=true;showPhoto(container,p);await saveDraft();
  }catch(error){console.error("Photo upload failed",error);message("無法讀取這張照片，請改用其他 JPG、PNG 或 WebP 圖片。");}
 }
+function matchesProduct(p,query,category){return (!category||p.category===category)&&query.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean).every(word=>[p.name,p.category,p.spec].join(" ").toLocaleLowerCase().includes(word));}
+function filterProducts(){const q=$("product-search").value,c=$("category-filter").value;let count=0;Array.from($("products").children).forEach((article,index)=>{const visible=products[index]?matchesProduct(products[index],q,c):false;article.hidden=!visible;if(visible)count++;});$("product-count").textContent="顯示 "+count+" / "+products.length+" 項商品"+(count?"":"，請試試其他關鍵字");}
 function renderProducts(){
+ const selected=$("category-filter").value;$("category-filter").replaceChildren();const all=node("option","全部分類");all.value="";$("category-filter").append(all);categories.forEach(c=>{const opt=node("option",c);opt.value=c;$("category-filter").append(opt)});$("category-filter").value=categories.includes(selected)?selected:"";
  $("products").replaceChildren();
  if(!products.length)$("products").append(node("p","還沒有商品，按「新增商品」開始。"));
  products.forEach(p=>{
@@ -114,8 +117,9 @@ function renderProducts(){
   row.append(label,field("價格（NT$，留白代表請洽 LINE）",p.price,v=>p.price=v,"number"));right.append(row,field("規格",p.spec,v=>p.spec=v));
   const intro=node("label","商品詳細介紹");const textarea=node("textarea");textarea.value=p.description||"";textarea.rows=6;textarea.style.cssText="width:100%;font:inherit;padding:10px;border:1px solid #d8cbbb;border-radius:9px";textarea.addEventListener("input",()=>{p.description=textarea.value;dirty=true;});intro.append(textarea);right.append(intro,node("p","更多商品照片請在上方線上商品管理編輯；此草稿會保留已載入的多張照片。","note"));
   right.append(button("刪除商品",async()=>{if(!await confirmAction("確定刪除「"+(p.name||"未命名商品")+"」？"))return;products=products.filter(item=>item.id!==p.id);delete photos[p.id];dirty=true;renderProducts();saveDraft();},"danger"));
-  article.append(left,right);$("products").append(article);
+  const compact=node("div");const title=node("strong",p.name||"未命名商品");compact.append(title,node("div",p.category+" · "+(p.spec||""),"note"));const priceField=field("價格（NT$）",p.price,v=>{p.price=v;const other=right.querySelector('input[type="number"]');if(other)other.value=v;},"number");compact.append(priceField);const detail=node("details");detail.append(node("summary","編輯詳細資料"),left,right);detail.addEventListener("toggle",()=>{if(!detail.open){title.textContent=p.name||"未命名商品";priceField.querySelector("input").value=p.price??"";filterProducts();}});const thumb=node("div");showPhoto(thumb,p);thumb.style.width="80px";article.append(thumb,compact,detail);$("products").append(article);
  });
+ filterProducts();
 }
 function render(){renderCategories();renderProducts();$("preview").hidden=true;}
 function preview(){
@@ -159,7 +163,7 @@ async function publish(){
  }catch(error){message(error.message);}finally{$("editor").disabled=false;}
 }
 $("add-category").addEventListener("click",()=>{const name=$("new-category").value.trim();if(!name || name==="全部")return message("請輸入新分類名稱，且不可使用「全部」。");if(categories.includes(name))return message("此分類名稱已存在。");categories.push(name);$("new-category").value="";dirty=true;render();saveDraft();});
-$("add-product").addEventListener("click",()=>{if(!categories.length)return message("請先新增一個分類。");products.push({pageId:crypto.randomUUID(),id:"p-"+crypto.randomUUID(),name:"",category:categories[0],spec:"",price:"",image:""});dirty=true;renderProducts();$("products").lastElementChild.scrollIntoView({behavior:"smooth",block:"center"});});
+$("add-product").addEventListener("click",()=>{if(!categories.length)return message("請先新增一個分類。");products.push({pageId:crypto.randomUUID(),id:"p-"+crypto.randomUUID(),name:"",category:categories[0],spec:"",price:"",image:""});dirty=true;$("product-search").value="";$("category-filter").value="";renderProducts();$("products").lastElementChild.querySelector("details").open=true;$("products").lastElementChild.scrollIntoView({behavior:"smooth",block:"center"});});
 $("save").addEventListener("click",saveDraft);$("preview-button").addEventListener("click",preview);$("publish").addEventListener("click",publish);
 $("export").addEventListener("click",()=>{const blob=new Blob([JSON.stringify(snapshot(),null,2)],{type:"application/json"});const url=URL.createObjectURL(blob);const a=node("a");a.href=url;a.download="儷鮮嚴選-菜單備份-"+new Date().toISOString().slice(0,10)+".json";a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);message("已下載菜單備份，包含草稿與本次上傳的照片。");});
 $("restore").addEventListener("click",()=>$("backup-file").click());
@@ -182,6 +186,7 @@ async function init(ignoreDraft=false){
   render();$("editor").disabled=false;if(ignoreDraft)await saveDraft();message("已載入官網菜單。修改後請儲存草稿；儲存草稿不會直接發布。");
  }catch(e){({products,categories,photos,baseline}=previous);message(e.message);}
 }
+$("product-search").addEventListener("input",filterProducts);$("category-filter").addEventListener("change",filterProducts);$("clear-product-search").addEventListener("click",()=>{$("product-search").value="";$("category-filter").value="";filterProducts();});$("quick-save").addEventListener("click",saveDraft);
 init();
 </script>
 </body></html>
