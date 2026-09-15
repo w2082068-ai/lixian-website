@@ -63,6 +63,18 @@
     "name": "$2,999 烤肉組合",
     "category": "中秋節烤肉專區",
     "image": "images/mtqwan0c-vuoc3nfe.jpg",
+    "images": [
+      "images/mu2ds6sf-rxb7xs8x.jpg",
+      "images/mu2ds6sl-eb2fsfch.jpg",
+      "images/mu2dv1tw-8xhsrrfo.jpg",
+      "images/mu2dsjkc-y49yhfna.jpg",
+      "images/mu2duhpm-wourpt4q.jpg",
+      "images/mu2duf4p-8pmnal9n.jpg",
+      "images/mu2duojr-w6iusgw0.jpg",
+      "images/mu2dus3u-czln0xms.jpg",
+      "images/mu2dvdbq-s6cxsyiz.jpg",
+      "images/mu2dvljg-ya88apx5.jpg"
+    ],
     "spec": "中秋節限定",
     "price": "2999"
   },
