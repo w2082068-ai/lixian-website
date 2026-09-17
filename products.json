@@ -565,8 +565,9 @@
     "name": "冷凍小卷",
     "category": "海鮮｜魷魚／大中小卷／透抽",
     "image": "images/mtvcxpko-90nsobsj.jpg",
-    "spec": "105g／隻",
-    "id": "p-f68bd885-8f9b-49cd-92b7-78edf788e979"
+    "spec": "100g／隻",
+    "id": "p-f68bd885-8f9b-49cd-92b7-78edf788e979",
+    "price": "45"
   },
   {
     "pageId": "89ad2267-40f7-4447-aa60-7f9dbe0f7db4",
