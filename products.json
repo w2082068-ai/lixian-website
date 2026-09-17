@@ -348,9 +348,9 @@
   },
   {
     "pageId": "a54971d7-a0a6-4d02-a7c6-d1fb3cdff386",
-    "name": "大卷",
+    "name": "冷凍大卷",
     "category": "海鮮｜魷魚／大中小卷／透抽",
-    "image": "images/mtr3gpae-twxvud96.jpg",
+    "image": "images/p-45d3d43c-3b34-4be5-97b2-a200c5d488fc-14a100c2-1070-4933-b055-93fe9f4978ad.jpg",
     "spec": "隻／包",
     "price": "225",
     "id": "p-45d3d43c-3b34-4be5-97b2-a200c5d488fc"
@@ -564,8 +564,8 @@
     "pageId": "b2ab55f8-7546-481e-afe8-89d90578fbb8",
     "name": "冷凍小卷",
     "category": "海鮮｜魷魚／大中小卷／透抽",
-    "image": "images/mtvcxpko-90nsobsj.jpg",
-    "spec": "100g／隻",
+    "image": "images/p-f68bd885-8f9b-49cd-92b7-78edf788e979-59d0770c-579c-4f7a-9229-5ff453f3c234.jpg",
+    "spec": "隻／包",
     "id": "p-f68bd885-8f9b-49cd-92b7-78edf788e979",
     "price": "45"
   },
