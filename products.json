@@ -160,14 +160,6 @@
     "price": "325"
   },
   {
-    "id": "scallop",
-    "pageId": "bad12d83-167c-40e3-b884-3472db6ca8da",
-    "name": "日本生食級4S干貝",
-    "category": "海鮮｜貝類",
-    "image": "images/japan_4s_scallop_500g.jpeg",
-    "spec": "500g／包"
-  },
-  {
     "id": "pork-chop",
     "pageId": "d25d4f3b-0786-4928-bdac-293ad49fcad4",
     "name": "法式豬戰斧",
