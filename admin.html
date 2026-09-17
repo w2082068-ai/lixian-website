@@ -10,8 +10,9 @@
 <body><p style="text-align:center;padding:16px"><a href="./orders-admin.html">訂單管理：登入查看訂單、核款與出貨 →</a></p>
 <header><h1>儷鮮嚴選｜菜單管理</h1><p>新增分類、上傳照片、編輯商品與價格。</p><a class="link" href="./" target="_blank" rel="noopener">查看官網 ↗</a></header>
 <main>
-<section class="box"><h2>登入管理與發布</h2><p>透過 Pages CMS 登入，編輯商品、價格、分類、封面照片、多張照片與詳細介紹。儲存後會更新官網；首次使用需要 GitHub 授權。</p><a class="link primary" href="https://app.pagescms.org/w2082068-ai/lixian-website/main/file/products" target="_blank" rel="noopener noreferrer">開啟商品管理與發布 ↗</a><p class="note">在商品或分類管理中修改後，按 Save 即會提交更新，等待部署完成後重新整理官網。下方本機草稿不會自動同步至線上管理。</p><p><a class="link" href="https://app.pagescms.org/w2082068-ai/lixian-website/main/file/categories" target="_blank" rel="noopener noreferrer">開啟分類管理 ↗</a></p></section>
-<details open><summary>快速搜尋與修改商品</summary><p class="note">可搜尋名稱、規格或分類並直接改價。修改先保留在草稿；發布需使用下方既有 GitHub 發布連線，或透過 Pages CMS 修改並存檔。</p>
+<details open><summary>搜尋商品、修改後，按「儲存並發布」</summary><p class="note">修改會自動保留草稿。按「儲存並發布」才會更新官網，不用先載入線上版本。</p>
+<section class="box"><h2>官網發布</h2><div class="toolbar"><button id="publish" type="button" class="primary">儲存並發布到官網</button><a class="link" href="./" target="_blank" rel="noopener">查看官網 ↗</a></div>
+<p id="connection-status" class="note"></p><details id="connection"><summary>發布連線設定（首次使用或憑證到期時）</summary><label>GitHub 連線憑證<input id="token" type="password" autocomplete="off" placeholder="貼上發布憑證"></label><p class="note">憑證僅在本頁使用，不會保存到瀏覽器或備份。本頁保持開啟時，可連續修改並發布。</p></details></section>
 <p id="message" role="status">正在載入菜單…</p>
 <fieldset id="editor" disabled>
 <section class="box">
@@ -19,22 +20,18 @@
 <div class="toolbar"><label style="flex:1">新分類名稱<input id="new-category" placeholder="例如：節慶禮盒"></label><button id="add-category" type="button">新增分類</button></div>
 <p class="note">修改分類名稱會同步更新該分類的商品。請先移走分類內的商品，再刪除分類。</p>
 </section>
-<section class="box"><div class="toolbar"><h2 style="flex:1">商品管理</h2><button id="add-product" type="button">＋ 新增商品</button></div><div class="row"><label>快速搜尋商品<input id="product-search" type="search" placeholder="輸入商品名稱、規格或分類"></label><label>篩選分類<select id="category-filter"><option value="">全部分類</option></select></label></div><div class="toolbar"><button id="clear-product-search" type="button">清除搜尋</button><button id="quick-save" type="button">儲存草稿</button><span id="product-count" role="status"></span></div><p class="note">價格留白代表請洽 LINE。搜尋不會移除商品；展開「編輯詳細資料」可修改照片、名稱與介紹。</p><div id="products"></div></section>
+<section class="box"><div class="toolbar"><h2 style="flex:1">商品管理</h2><button id="add-product" type="button">＋ 新增商品</button></div><div class="row"><label>快速搜尋商品<input id="product-search" type="search" placeholder="輸入商品名稱、規格或分類"></label><label>篩選分類<select id="category-filter"><option value="">全部分類</option></select></label></div><div class="toolbar"><button id="clear-product-search" type="button">清除搜尋</button><button id="quick-save" type="button" class="primary">儲存並發布</button><span id="product-count" role="status"></span></div><p class="note">價格留白代表請洽 LINE。搜尋不會移除商品；展開「編輯詳細資料」可修改照片、名稱與介紹。</p><div id="products"></div></section>
 <section class="box"><h2>儲存與預覽</h2><div class="toolbar"><button id="save" type="button">儲存草稿</button><button id="reload-online" type="button">載入官網版本</button><button id="preview-button" type="button">預覽菜單</button><button id="export" type="button">下載菜單備份</button><button id="restore" type="button">匯入菜單備份</button></div>
 <input id="backup-file" type="file" accept=".json,application/json" hidden>
 <p class="note">草稿只保存在目前瀏覽器，不會自動更新官網。下載備份可保存商品、分類與本次上傳的照片，交由協助者發布。</p>
 <div id="preview" hidden></div></section>
-<section class="box"><h2>發布到官網</h2><p>編輯與發布是分開的。公開官網只顯示已發布的版本。</p>
-<details><summary>既有 GitHub 發布連線（進階）</summary><p class="note">保留原管理頁的發布方式。連線資訊僅在本頁使用，不會存入草稿或備份。</p>
-<label>GitHub 連線憑證<input id="token" type="password" autocomplete="off" placeholder="已設定的 GitHub 連線憑證"></label>
-<button id="publish" type="button" class="primary">發布全部變更到官網</button></details>
-</section>
 </fieldset></details>
 </main>
 <script>
 "use strict";
 const API = "https://api.github.com/repos/w2082068-ai/lixian-website";
 const $ = id => document.getElementById(id);
+let autoSaveTimer, publishing=false;
 let products = [], categories = [], photos = {}, baseline = null, db, dirty = false, pendingSave = Promise.resolve();
 function node(tag, text, className) { const e = document.createElement(tag); if(text !== undefined) e.textContent = text; if(className) e.className = className; return e; }
 function message(text) { $("message").textContent = text; }
@@ -62,10 +59,10 @@ async function blobHash(text){
 }
 function openDB(){return new Promise((resolve,reject)=>{const request=indexedDB.open("lixian-menu-manager",1);request.onupgradeneeded=()=>request.result.createObjectStore("drafts");request.onsuccess=()=>resolve(request.result);request.onerror=()=>reject(request.error);});}
 function readDraft(){return new Promise((resolve,reject)=>{const tx=db.transaction("drafts");const request=tx.objectStore("drafts").get("current");request.onsuccess=()=>resolve(request.result);request.onerror=()=>reject(request.error);});}
-function saveDraft(){
+function saveDraft(quiet=false){
  const value=structuredClone(snapshot());
  pendingSave=pendingSave.catch(()=>{}).then(()=>new Promise((resolve,reject)=>{if(!db)return reject(new Error("此瀏覽器無法保存草稿，請下載菜單備份。"));const tx=db.transaction("drafts","readwrite");tx.objectStore("drafts").put(value,"current");tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error);}));
- return pendingSave.then(()=>{dirty=JSON.stringify(snapshot())!==JSON.stringify(value);message("草稿已儲存在此瀏覽器，尚未發布到官網。");}).catch(e=>{message(e.message || "草稿儲存失敗，請下載菜單備份。");});
+ return pendingSave.then(()=>{dirty=JSON.stringify(snapshot())!==JSON.stringify(value);if(!quiet)message("草稿已儲存；按「儲存並發布」才會更新官網。");}).catch(e=>{message(e.message || "草稿儲存失敗，請下載菜單備份。");});
 }
 function renderCategories(){
  $("categories").replaceChildren();
@@ -142,25 +139,51 @@ async function api(path,method="GET",body){
  if(!response.ok)throw new Error(response.status===401 || response.status===403?"發布連線未授權或權限不足，草稿仍保留。":"GitHub 發布失敗（"+response.status+"），草稿仍保留。");
  return response.json();
 }
+
+function connectionStatus(){ $("connection-status").textContent=$("token").value.trim()?"發布連線已填入，本頁可直接儲存並發布。":"請展開連線設定貼上憑證；本頁保持開啟時只需填一次。"; }
+$("token").addEventListener("input",connectionStatus);connectionStatus();
+function same(a,b){return JSON.stringify(a)===JSON.stringify(b);}
+function mergeMenu(base,draft,live){
+ const key=p=>p.pageId||p.id;const bm=new Map(base.map(p=>[key(p),p])),dm=new Map(draft.map(p=>[key(p),p]));const out=[];
+ const meaningful=p=>Object.fromEntries(Object.entries(p).filter(([k])=>k!=="id"));
+ for(const p of live){const k=key(p),b=bm.get(k),d=dm.get(k);dm.delete(k);
+  if(!b){if(d&&!same(meaningful(d),meaningful(p)))throw new Error("商品「"+p.name+"」在另一處也有修改。草稿已保留，請下載備份交由協助者整合。");out.push(p);continue;}
+  if(!d){if(!same(meaningful(b),meaningful(p)))throw new Error("要刪除的商品「"+p.name+"」在線上也有修改。草稿已保留，請先確認。");continue;}
+  const n={...p};for(const field of new Set([...Object.keys(b),...Object.keys(d)])){if(field==="id")continue;if(!same(b[field],d[field])){if(!same(b[field],p[field])&&!same(d[field],p[field]))throw new Error("商品「"+p.name+"」的同一欄位有不同修改，尚未發布。請下載備份交由協助者整合。");if(d[field]===undefined)delete n[field];else n[field]=d[field];}}out.push(n);
+ }
+ for(const [k,d] of dm){const b=bm.get(k);if(!b)out.push(d);else if(!same(meaningful(b),meaningful(d)))throw new Error("商品「"+d.name+"」已在線上刪除，草稿仍保留修改，請先確認。");}
+ return out;
+}
+async function readBlob(sha){const b=await api("/git/blobs/"+sha);const bytes=Uint8Array.from(atob(b.content.replace(/\s/g,"")),c=>c.charCodeAt(0));return JSON.parse(new TextDecoder().decode(bytes));}
+async function syncedMenu(remote){
+ if(!baseline)throw new Error("這份舊草稿缺少版本資料。請下載備份交由協助者整合一次，之後即可直接發布。");
+ let merged=products,mergedCategories=categories;
+ if(baseline["products.json"]!==remote["products.json"]){const [base,live]=await Promise.all([readBlob(baseline["products.json"]),readBlob(remote["products.json"])]);merged=mergeMenu(base,products,live);}
+ if(baseline["categories.json"]!==remote["categories.json"]){const [b,l]=await Promise.all([readBlob(baseline["categories.json"]),readBlob(remote["categories.json"])]);const base=Array.isArray(b)?b:b.categories,live=Array.isArray(l)?l:l.categories;if(same(categories,base))mergedCategories=live;else if(!same(live,base)&&!same(live,categories))throw new Error("分類在另一處也有修改，草稿已保留。請下載備份交由協助者整合。");}
+ if(merged.some(p=>!mergedCategories.includes(p.category)))throw new Error("商品分類與線上修改有衝突，草稿已保留，請下載備份交由協助者整合。");
+ return {products:merged,categories:mergedCategories};
+}
 async function publish(){
+ if(publishing)return;publishing=true;$("publish").disabled=true;clearTimeout(autoSaveTimer);
  try{
-  validatePublish();for(const p of products){if(!p.pageId)p.pageId=crypto.randomUUID();}if(!$("token").value.trim())throw new Error("尚未設定發布連線。可以先儲存草稿或下載菜單備份，交由協助者發布。");
+  await saveDraft(true);
+  validatePublish();for(const p of products){if(!p.pageId)p.pageId=crypto.randomUUID();}if(!$("token").value.trim()){$("connection").open=true;$("token").focus();throw new Error("請先貼上發布憑證。本頁保持開啟時只需填一次。");}connectionStatus();
   $("editor").disabled=true;message("正在確認線上版本…");
   const head=await api("/git/ref/heads/main");
   const current=await api("/git/commits/"+head.object.sha);
   const tree=await api("/git/trees/"+current.tree.sha);
   const remote={};for(const name of ["products.json","categories.json"]){const item=tree.tree.find(x=>x.path===name);remote[name]=item?.sha || null;}
-  if(!baseline || ["products.json","categories.json"].some(name=>baseline[name]!==remote[name]))throw new Error("線上菜單已變更，為避免覆蓋其他更新，本次未發布。請下載草稿備份，交由協助者整合。");
+  const merged=await syncedMenu(remote);
   const entries=[];
   for(const p of products){const photo=photos[p.id];if(!photo)continue;message("正在上傳商品照片…");const blob=await api("/git/blobs","POST",{content:photo.data.split(",")[1],encoding:"base64"});entries.push({path:photo.path,mode:"100644",type:"blob",sha:blob.sha});}
-  for(const [path,value] of [["products.json",products],["categories.json",{categories}]]){
+  for(const [path,value] of [["products.json",merged.products],["categories.json",{categories:merged.categories}]]){
    const blob=await api("/git/blobs","POST",{content:JSON.stringify(value,null,2)+"\n",encoding:"utf-8"});entries.push({path,mode:"100644",type:"blob",sha:blob.sha});remote[path]=blob.sha;
   }
   const nextTree=await api("/git/trees","POST",{base_tree:current.tree.sha,tree:entries});
   const commit=await api("/git/commits","POST",{message:"更新儷鮮嚴選菜單",tree:nextTree.sha,parents:[head.object.sha]});
   await api("/git/refs/heads/main","PATCH",{sha:commit.sha,force:false});
-  baseline=remote;photos={};await saveDraft();message("已提交發布，GitHub Pages 更新中。稍後點「查看官網」確認新版菜單。");
- }catch(error){message(error.message);}finally{$("editor").disabled=false;}
+  products=merged.products;categories=merged.categories;baseline=remote;photos={};await saveDraft(true);render();message("變更已送出，官網更新中（通常約 1～3 分鐘）。稍後按「查看官網」並重新整理。下次可直接修改後儲存並發布。");
+ }catch(error){message(error.message);}finally{$("editor").disabled=false;$("publish").disabled=false;publishing=false;}
 }
 $("add-category").addEventListener("click",()=>{const name=$("new-category").value.trim();if(!name || name==="全部")return message("請輸入新分類名稱，且不可使用「全部」。");if(categories.includes(name))return message("此分類名稱已存在。");categories.push(name);$("new-category").value="";dirty=true;render();saveDraft();});
 $("add-product").addEventListener("click",()=>{if(!categories.length)return message("請先新增一個分類。");products.push({pageId:crypto.randomUUID(),id:"p-"+crypto.randomUUID(),name:"",category:categories[0],spec:"",price:"",image:""});dirty=true;$("product-search").value="";$("category-filter").value="";renderProducts();$("products").lastElementChild.querySelector("details").open=true;$("products").lastElementChild.scrollIntoView({behavior:"smooth",block:"center"});});
@@ -183,12 +206,15 @@ async function init(ignoreDraft=false){
   if(!Array.isArray(categories))categories=[];
   categories=[...new Set([...categories,...products.map(p=>p.category)])];
   if(!valid(snapshot()))throw new Error("線上菜單資料格式異常，請聯絡協助者。");
-  render();$("editor").disabled=false;if(ignoreDraft)await saveDraft();message("已載入官網菜單。修改後請儲存草稿；儲存草稿不會直接發布。");
+  render();$("editor").disabled=false;if(ignoreDraft)await saveDraft();message("已載入官網菜單。修改後按「儲存並發布」即可更新官網。");
  }catch(e){({products,categories,photos,baseline}=previous);message(e.message);}
 }
-$("product-search").addEventListener("input",filterProducts);$("category-filter").addEventListener("change",filterProducts);$("clear-product-search").addEventListener("click",()=>{$("product-search").value="";$("category-filter").value="";filterProducts();});$("quick-save").addEventListener("click",saveDraft);
+$("product-search").addEventListener("input",filterProducts);$("category-filter").addEventListener("change",filterProducts);$("clear-product-search").addEventListener("click",()=>{$("product-search").value="";$("category-filter").value="";filterProducts();});$("quick-save").addEventListener("click",publish);
+$("editor").addEventListener("input",event=>{if(!event.target.matches("input,textarea,select")||["product-search","category-filter","new-category","backup-file"].includes(event.target.id))return;clearTimeout(autoSaveTimer);autoSaveTimer=setTimeout(()=>saveDraft(),800);});
 init();
 </script>
 </body></html>
+
+
 
 
