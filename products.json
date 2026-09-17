@@ -139,7 +139,8 @@
     "name": "頂級格凌蘭厚切鱈魚",
     "category": "海鮮｜魚類",
     "image": "images/mtqvcnan-e6m8sac9.jpg",
-    "spec": "250g／包"
+    "spec": "250g／包",
+    "price": "160"
   },
   {
     "id": "lobster",
@@ -176,15 +177,6 @@
     "image": "images/mtqw45jr-zzg0uj61.jpg",
     "spec": "300g／包",
     "price": "135"
-  },
-  {
-    "pageId": "57fddd05-46c0-41e9-bee0-009fa3b3ede8",
-    "name": "精選紐頂級西蘭牛舌",
-    "category": "肉品｜牛肉",
-    "image": "images/mtqxf7un-1h7duoev.jpg",
-    "spec": "200g／盒",
-    "price": "295",
-    "id": "p-94b68232-4bcd-4f6b-b35b-577d8c868452"
   },
   {
     "pageId": "14bb7ea8-3afa-4c11-908d-63f1161a5df3",
@@ -356,11 +348,11 @@
   },
   {
     "pageId": "a54971d7-a0a6-4d02-a7c6-d1fb3cdff386",
-    "name": "中卷",
+    "name": "大卷",
     "category": "海鮮｜魷魚／大中小卷／透抽",
     "image": "images/mtr3gpae-twxvud96.jpg",
     "spec": "隻／包",
-    "price": "215",
+    "price": "225",
     "id": "p-45d3d43c-3b34-4be5-97b2-a200c5d488fc"
   },
   {
@@ -512,7 +504,7 @@
     "category": "海鮮｜蝦類",
     "image": "images/mttye4e2-ilqj90ba.jpg",
     "spec": "600g／包",
-    "price": "350",
+    "price": "355",
     "id": "p-7391f4c0-946f-424f-b822-50f27919339c"
   },
   {
@@ -522,15 +514,6 @@
     "image": "images/mtv0wi8h-e1ty1mna.jpg",
     "spec": "6顆／袋",
     "id": "p-ed152118-53cd-42a5-b3d6-8311e6807286"
-  },
-  {
-    "pageId": "93b592ea-a265-4bbf-bb4a-7583266aa871",
-    "name": "進口豬梅花捲片",
-    "category": "肉品｜豬肉",
-    "image": "images/mtv17txw-bac1shc5.jpg",
-    "spec": "1公斤／袋",
-    "price": "350",
-    "id": "p-64631825-e67c-42cb-8c86-b97b8ed173f5"
   },
   {
     "pageId": "b4a6b55e-69cb-47ae-a179-a74a389898ec",
