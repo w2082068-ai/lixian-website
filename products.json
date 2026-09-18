@@ -618,5 +618,14 @@
     "price": "2999",
     "image": "images/p-3f702694-09d2-4b88-8fa3-5c6df12dd0dc-e9dbded8-d859-4e3f-82db-bc6fdb5a609b.jpg",
     "description": "不想吃肉肉的朋友們，可以選擇海鮮套組喔！"
+  },
+  {
+    "pageId": "66c9e231-93f7-402b-8449-83bec35d069c",
+    "id": "p-7e213be0-be0e-4e2f-8e8e-e74e035cf69d",
+    "name": "日本廣島生食級全殼生蠔",
+    "category": "海鮮｜貝類",
+    "spec": "6顆／包",
+    "price": "288",
+    "image": "images/p-7e213be0-be0e-4e2f-8e8e-e74e035cf69d-0f0dc286-d1a6-470f-9c94-8cb8aa7f7925.jpg"
   }
 ]
