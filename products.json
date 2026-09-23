@@ -322,15 +322,6 @@
     "id": "p-d60f5752-0d47-4cfe-a5b0-12306e4d8448"
   },
   {
-    "id": "broccoli",
-    "pageId": "5a1dcb42-3bdf-460b-8423-1da74ca73d04",
-    "name": "冷凍青花菜",
-    "category": "蔬菜類",
-    "image": "images/mtquxa1u-3cepv4pa.jpg",
-    "spec": "1000g ±5%／包",
-    "price": "89"
-  },
-  {
     "pageId": "a54971d7-a0a6-4d02-a7c6-d1fb3cdff386",
     "name": "冷凍大卷",
     "category": "海鮮｜魷魚／大中小卷／透抽",
@@ -651,5 +642,14 @@
     "spec": "片／包",
     "price": "99",
     "image": "images/p-44de57b2-9964-4cf6-81e3-4de1c48443e2-be19f34f-e8a8-42ef-8046-4bfa66ceaf72.jpg"
+  },
+  {
+    "pageId": "5adf781e-ab0c-4bc6-ad88-77471dc4b8c6",
+    "id": "p-5e054acb-f63c-4db4-9e0c-69600d10ea4b",
+    "name": "日本A5和牛梅花心",
+    "category": "肉品｜牛肉",
+    "spec": "100g／盒",
+    "price": "190",
+    "image": "images/p-5e054acb-f63c-4db4-9e0c-69600d10ea4b-48febbe6-e2cf-437f-abae-e95e1146d805.jpg"
   }
 ]
