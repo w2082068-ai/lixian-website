@@ -322,14 +322,6 @@
     "id": "p-d60f5752-0d47-4cfe-a5b0-12306e4d8448"
   },
   {
-    "pageId": "8f114558-ede7-4d29-879d-38c01f6cc255",
-    "name": "日本A5板腱",
-    "category": "肉品｜牛肉",
-    "image": "images/mtr23q23-7mr4ky8n.jpg",
-    "spec": "200-300g/單片(秤重)",
-    "id": "p-95e747a8-c8a2-486d-9e0d-0e1fb43c7571"
-  },
-  {
     "id": "broccoli",
     "pageId": "5a1dcb42-3bdf-460b-8423-1da74ca73d04",
     "name": "冷凍青花菜",
@@ -649,5 +641,15 @@
     "price": "",
     "image": "images/p-d46ff739-7173-49d7-9820-de40396dff14-887a21fa-d7a8-47f4-a4c1-79b33e1a3cba.jpg",
     "description": "每片真空包裝 不定重\n一公斤$1690元\n每片均有315g-360g 價錢約$532-610"
+  },
+  {
+    "pageId": "223a61d6-2485-4433-9e96-a591d489ea38",
+    "id": "p-530bde13-92e6-4cea-99f1-dc2867c452f3",
+    "name": "日本A5板腱牛排",
+    "category": "肉品｜牛肉",
+    "spec": "秤重／單片包裝",
+    "price": "",
+    "image": "images/p-530bde13-92e6-4cea-99f1-dc2867c452f3-e3a5726d-1da3-469f-b0e8-5817ca94e63c.jpg",
+    "description": "每片真空包裝不定重\n一公斤$2895\n每片均有分為150g-350g\n價格約$440-$1013"
   }
 ]
