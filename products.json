@@ -639,5 +639,15 @@
     "spec": "200g／包",
     "price": "175",
     "image": "images/p-4463b68a-cd70-4702-9621-7f963021222b-c1325000-db97-4567-8246-a00129d11836.jpg"
+  },
+  {
+    "pageId": "ab1342f7-e8cf-4629-ab78-360f1b684414",
+    "id": "p-d46ff739-7173-49d7-9820-de40396dff14",
+    "name": "Choice 肋眼牛排",
+    "category": "肉品｜牛肉",
+    "spec": "秤重／單片一包",
+    "price": "",
+    "image": "images/p-d46ff739-7173-49d7-9820-de40396dff14-887a21fa-d7a8-47f4-a4c1-79b33e1a3cba.jpg",
+    "description": "每片真空包裝 不定重\n一公斤$1690元\n每片均有315g-360g 價錢約$532-610"
   }
 ]
