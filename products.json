@@ -620,5 +620,14 @@
     "price": "79",
     "image": "images/p-37dfcdf9-76ff-439f-9af8-590e7fc8fed0-e4b7e289-bbe7-42e9-8628-411a51915ee3.jpg",
     "description": "烤煎炸滷都適宜"
+  },
+  {
+    "pageId": "3ae376fc-5740-4bf5-8d25-e59d1a9bdfb4",
+    "id": "p-6646fd36-8d08-4477-bfb9-8d01680a0af5",
+    "name": "韓國半殼生蠔",
+    "category": "海鮮｜貝類",
+    "spec": "6顆／袋",
+    "price": "168",
+    "image": "images/p-6646fd36-8d08-4477-bfb9-8d01680a0af5-50d8e079-ebc7-4f55-be71-3239f6640857.jpg"
   }
 ]
