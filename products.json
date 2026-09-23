@@ -651,5 +651,14 @@
     "price": "",
     "image": "images/p-530bde13-92e6-4cea-99f1-dc2867c452f3-e3a5726d-1da3-469f-b0e8-5817ca94e63c.jpg",
     "description": "每片真空包裝不定重\n一公斤$2895\n每片均有分為150g-350g\n價格約$440-$1013"
+  },
+  {
+    "pageId": "b923d1be-0363-4e39-81fa-189da2d5f0a2",
+    "id": "p-69540d6b-b8b1-4426-9546-f228347a3e41",
+    "name": "魷魚串",
+    "category": "海鮮｜魷魚／大中小卷／透抽",
+    "spec": "5隻／袋",
+    "price": "450",
+    "image": "images/p-69540d6b-b8b1-4426-9546-f228347a3e41-054b5471-cd5d-4672-8a07-9807bfee0fdc.jpg"
   }
 ]
