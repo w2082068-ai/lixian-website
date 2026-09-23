@@ -143,16 +143,6 @@
     "price": "160"
   },
   {
-    "id": "lobster",
-    "pageId": "327f70ac-56d4-4580-8690-f516fa7b199d",
-    "name": "龍蝦尾",
-    "category": "海鮮｜蟹類／龍蝦",
-    "image": "images/lobster_tail_250g.jpeg",
-    "spec": "250g／包",
-    "price": "550",
-    "description": "一隻250g／550元"
-  },
-  {
     "id": "shrimp",
     "pageId": "3a37edb1-f15b-4cc4-930c-073439b21377",
     "name": "活凍紅太陽白蝦",
