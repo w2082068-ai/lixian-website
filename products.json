@@ -716,6 +716,38 @@
       "images/8d2fa46b-a008-4fe7-bd85-e2322cb43bec.jpg",
       "images/729f28b6-7e48-4fea-8c18-7ebe6b337e5a.jpg"
     ],
-    "description": "６種口味選擇～"
+    "description": "多種口味可以做選擇~單片140g 烹飪方便 ",
+    "options": [
+      {
+        "id": "a362c5ce-6914-4ad9-a0ae-405b2eda89c5",
+        "name": "口味：蒜香黑胡椒",
+        "price": ""
+      },
+      {
+        "id": "64441c31-60a4-411e-aeaf-546d4033b357",
+        "name": "口味：台式油蔥",
+        "price": ""
+      },
+      {
+        "id": "f194f9d1-7465-4bb6-9d3a-0366073f5c3e",
+        "name": "馬告椒鹽",
+        "price": ""
+      },
+      {
+        "id": "ff67aaff-9fdd-4d19-b4ff-ab69ad218d84",
+        "name": "玫瑰鹽",
+        "price": ""
+      },
+      {
+        "id": "3ba440f1-74a2-4522-8ce0-eee69c11f12e",
+        "name": "川香花椒",
+        "price": ""
+      },
+      {
+        "id": "55869e9c-71a4-4e98-b0d7-be3c6bb189d2",
+        "name": "日式照燒",
+        "price": ""
+      }
+    ]
   }
 ]
