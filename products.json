@@ -571,7 +571,12 @@
     "category": "海鮮｜貝類",
     "image": "images/p-6646fd36-8d08-4477-bfb9-8d01680a0af5-50d8e079-ebc7-4f55-be71-3239f6640857.jpg",
     "spec": "6顆／袋",
-    "price": "168"
+    "price": "168",
+    "images": [
+      "images/d2d2e4fc-a379-4302-9838-bb22a6e24800.jpg",
+      "images/e2419ff3-7d3c-46b1-94de-392691697d11.jpg",
+      "images/7d2db3c6-72f2-4384-98e6-de2008d7ba9c.jpg"
+    ]
   },
   {
     "id": "p-6150dbd7-63fb-49a4-b722-beb6c8eb56e1",
