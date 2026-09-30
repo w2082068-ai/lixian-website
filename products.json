@@ -555,7 +555,10 @@
     "category": "海鮮｜貝類",
     "image": "images/p-7e213be0-be0e-4e2f-8e8e-e74e035cf69d-0f0dc286-d1a6-470f-9c94-8cb8aa7f7925.jpg",
     "spec": "6顆／包",
-    "price": "288"
+    "price": "288",
+    "images": [
+      "images/d9925e18-0899-46c6-ae56-5afe74ff7389.jpg"
+    ]
   },
   {
     "id": "p-37dfcdf9-76ff-439f-9af8-590e7fc8fed0",
