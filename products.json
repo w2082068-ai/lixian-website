@@ -619,9 +619,12 @@
     "pageId": "b923d1be-0363-4e39-81fa-189da2d5f0a2",
     "name": "魷魚串",
     "category": "海鮮｜魷魚／大中小卷／透抽",
-    "image": "images/p-69540d6b-b8b1-4426-9546-f228347a3e41-054b5471-cd5d-4672-8a07-9807bfee0fdc.jpg",
+    "image": "images/440155f0-dca2-4a1f-9be1-63b9a1378316.jpg",
     "spec": "5隻／袋",
-    "price": "450"
+    "price": "450",
+    "images": [
+      "images/dcd970bf-3f43-4304-9caf-295e12294d9d.jpg"
+    ]
   },
   {
     "id": "p-44de57b2-9964-4cf6-81e3-4de1c48443e2",
