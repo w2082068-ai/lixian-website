@@ -660,5 +660,14 @@
     "spec": "1000g／袋",
     "price": "230",
     "image": "images/p-54be6239-37f3-4f02-8999-abac95847b8b-4fa03ad5-4f08-417d-b532-80fe434e1cbf.jpg"
+  },
+  {
+    "pageId": "be4cfc91-7311-4ac9-a907-15927abc0f6b",
+    "id": "p-4ef026e5-6f40-4fe2-83d0-d182cfcf34e2",
+    "name": "冷凍青花菜",
+    "category": "蔬菜類",
+    "spec": "1000g／袋",
+    "price": "89",
+    "image": "images/p-4ef026e5-6f40-4fe2-83d0-d182cfcf34e2-82380675-6063-4d05-a58a-bd93b2869e6d.jpg"
   }
 ]
