@@ -21,6 +21,15 @@ function render(product){
   $("category").textContent=product.category;$("category").href="./?category="+encodeURIComponent(product.category);
   const price=Catalog.price(product.price);$("price").textContent=price;$("price").classList.toggle("ask",price==="價格請洽 LINE");
   $("description").textContent=typeof product.description==="string" && product.description.trim()?product.description:"商品詳細資訊歡迎透過官方 LINE 洽詢。";
+  const selector=$("product-option"),link=$("checkout-link");selector.replaceChildren();$("product-options").hidden=!product.options?.length;
+  const baseURL="./checkout.html?product="+encodeURIComponent(Catalog.key(product));link.href=baseURL;
+  link.onclick=event=>{if(product.options?.length&&!selector.value){event.preventDefault();$("option-message").textContent="請先選擇口味／規格。";selector.focus();}};
+  if(product.options?.length){
+   const first=document.createElement("option");first.value="";first.textContent="請選擇口味／規格";selector.append(first);
+   for(const v of OrderOptions.variants(product)){const option=document.createElement("option");option.value=v.option_id;option.textContent=v.option_name+" · "+Catalog.price(v.price);option.disabled=OrderOptions.cents(v.price)===null;selector.append(option);}
+   selector.onchange=()=>{const v=OrderOptions.variants(product).find(v=>v.option_id===selector.value);$("price").textContent=v?Catalog.price(v.price):"請選擇口味／規格查看價格";link.href=baseURL+(v?"&option="+encodeURIComponent(v.option_id):"");$("option-message").textContent="";};
+   selector.onchange();
+  }
   photos=Catalog.photos(product);selected=0;$("thumbnails").replaceChildren();
   photos.forEach((src,i)=>{const button=document.createElement("button");button.type="button";button.className="thumbnail";button.setAttribute("aria-label","查看第 "+(i+1)+" 張照片");button.setAttribute("aria-pressed",String(i===0));const img=document.createElement("img");img.src=src;img.alt="";img.loading="lazy";img.addEventListener("error",()=>{button.textContent=String(i+1);},{once:true});button.append(img);button.addEventListener("click",()=>showPhoto(i));$("thumbnails").append(button);});
   for(const id of ["previous","next","lightbox-previous","lightbox-next"])$(id).disabled=photos.length<2;
@@ -50,3 +59,5 @@ box.addEventListener("click",event=>{if(event.target===box)box.close();});
 box.addEventListener("keydown",event=>{if(event.key==="ArrowRight"){event.preventDefault();showPhoto(selected+1);}if(event.key==="ArrowLeft"){event.preventDefault();showPhoto(selected-1);}});
 $("zoom-in").addEventListener("click",()=>changeZoom(zoom+.5));$("zoom-out").addEventListener("click",()=>changeZoom(zoom-.5));
 load();
+
+

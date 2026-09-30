@@ -167,7 +167,7 @@ function optionsEditor(p){
    item.append(row,button("移除此選項",()=>{p.options.splice(index,1);dirty=true;draw();saveDraft();},"danger"));list.append(item);
   });
  }
- section.append(node("h3","商品選項／口味"),node("p","可自行新增多筆名稱與售價。價格填的是此選項的完整單價，不是加價；留白沿用商品原價。此處先保存選項設定，下單選擇功能尚待串接。","note"),list,button("＋ 新增選項",()=>{if(!Array.isArray(p.options))p.options=[];p.options.push({id:crypto.randomUUID(),name:"",price:""});dirty=true;draw();saveDraft();list.lastElementChild.querySelector("input").focus();}));
+ section.append(node("h3","商品選項／口味"),node("p","可自行新增多筆名稱與售價。價格填的是此選項的完整單價，不是加價；留白沿用商品原價。發布後，客人可選擇選項加入購物車；訂單會記錄選项與單價。","note"),list,button("＋ 新增選項",()=>{if(!Array.isArray(p.options))p.options=[];p.options.push({id:crypto.randomUUID(),name:"",price:""});dirty=true;draw();saveDraft();list.lastElementChild.querySelector("input").focus();}));
  draw();return section;
 }
 
