@@ -702,5 +702,20 @@
       "images/1dea294f-44b2-4c0a-aa90-1ee5c332af25.jpg",
       "images/1aecb8cc-0d1e-4567-82ab-0eda8a025213.jpg"
     ]
+  },
+  {
+    "pageId": "6290b1d6-344f-4fb8-9f10-ed8863e3b686",
+    "id": "p-6fb855e1-d80f-477c-9749-ca5cdbe19bc9",
+    "name": "舒肥嫩雞胸肉",
+    "category": "肉品｜雞肉",
+    "spec": "140g／單片真空包裝",
+    "price": "75",
+    "image": "images/9682238e-9062-4f02-af66-873350aa96ac.jpg",
+    "images": [
+      "images/becf95c1-ba82-4d6f-bcdd-dd10a267e684.jpg",
+      "images/8d2fa46b-a008-4fe7-bd85-e2322cb43bec.jpg",
+      "images/729f28b6-7e48-4fea-8c18-7ebe6b337e5a.jpg"
+    ],
+    "description": "６種口味選擇～"
   }
 ]
