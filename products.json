@@ -512,12 +512,15 @@
   {
     "id": "p-a5101e26-1259-4a55-a516-f923d1f5a786",
     "pageId": "0e947316-0c89-4081-b9e1-764e4d2cb900",
-    "name": "日本3S生食級干貝",
+    "name": "日本生食級干貝",
     "category": "海鮮｜貝類",
-    "image": "images/p-a5101e26-1259-4a55-a516-f923d1f5a786-464e435a-c309-4cec-bdb0-cf9f1a3183df.jpg",
-    "description": "小編最愛～ 3S干貝真的太好吃了😋\n烤煎煮湯樣樣宜",
+    "image": "images/226204c3-c775-466d-8b76-ccaaa1152ce0.jpg",
+    "description": "小編最愛～ 干貝真的太好吃了😋\n烤煎煮湯樣樣宜",
     "spec": "1000g／盒",
-    "price": "2300"
+    "price": "2300",
+    "images": [
+      "images/20cd3747-db74-4367-8af1-c718c1921861.jpg"
+    ]
   },
   {
     "id": "p-351da3ba-a3e0-4eb6-8cdf-8aad6451698a",
