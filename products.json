@@ -683,5 +683,18 @@
     ],
     "spec": "平均１kg左右／組",
     "price": "2500"
+  },
+  {
+    "pageId": "01ad3bd9-abf3-462b-83e9-288e820f7e2f",
+    "id": "p-b193998a-acaf-4e43-87a8-d0750b1f7bd1",
+    "name": "冷凍生食級干貝",
+    "category": "海鮮｜貝類",
+    "spec": "500g／盒",
+    "price": "880",
+    "image": "images/5db6907b-c367-4d54-aa85-f7ced1e5120e.jpg",
+    "images": [
+      "images/1dea294f-44b2-4c0a-aa90-1ee5c332af25.jpg",
+      "images/1aecb8cc-0d1e-4567-82ab-0eda8a025213.jpg"
+    ]
   }
 ]
