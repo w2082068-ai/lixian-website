@@ -753,5 +753,17 @@
       "images/2efedb9b-b253-40f5-aba9-8c3e228de54b.jpg",
       "images/d4d87a1f-3616-43e6-aae6-1a7117858993.jpg"
     ]
+  },
+  {
+    "pageId": "8cb6efe2-09fa-410d-92a2-f3425515de01",
+    "id": "p-16cd1e04-871d-4b6d-9b6c-3a6e025f571b",
+    "name": "帶殼鮑魚",
+    "category": "海鮮｜貝類",
+    "spec": "18P／袋",
+    "price": "350",
+    "image": "images/d2c7c723-3694-4c6a-a75b-272a2522131c.jpg",
+    "images": [
+      "images/bc907f83-2d30-4225-a79f-8ee1b59dff9d.jpg"
+    ]
   }
 ]
