@@ -141,6 +141,36 @@ function galleryEditor(p){
  input.addEventListener("change",async()=>{await addPhotos(input.files,p,refresh);input.value="";});upload.append(input);
  section.append(node("h3","商品多張圖片"),node("p","封面會先顯示，其他圖片依下方順序顯示。每張限 10 MB，可選 JPG、PNG、WebP。","note"),upload,list);refresh();return section;
 }
+function validateOptions(p){
+ if(p.options==null)return;
+ if(!Array.isArray(p.options))throw new Error("商品「"+p.name+"」的選項格式不正確。");
+ const names=new Set(),ids=new Set();
+ for(const option of p.options){
+  if(!option||typeof option.name!=="string"||!option.name.trim())throw new Error("商品「"+p.name+"」有未填名稱的選項，請填寫或移除該列。");
+  const name=option.name.trim(),price=String(option.price??"").trim();
+  if(name.length>80||names.has(name))throw new Error("商品「"+p.name+"」的選項名稱不可重複，且限 80 字。");
+  if(typeof option.id!=="string"||!option.id||ids.has(option.id))throw new Error("商品選項代號異常，請移除後重新新增。");
+  if(price!==""&&(!/^\d+(\.\d{1,2})?$/.test(price)||Number(price)<=0||!Number.isSafeInteger(Math.round(Number(price)*100))))throw new Error("商品「"+p.name+"」的選項價格請填大於 0 的金額（最多兩位小數），或留白沿用商品價格。");
+  names.add(name);ids.add(option.id);
+ }
+}
+function optionsEditor(p){
+ const section=node("section",undefined,"gallery-editor"),list=node("div");
+ function draw(){
+  list.replaceChildren();
+  if(!p.options?.length)list.append(node("p","尚未設定選項；需要時按下方「新增選項」，不需要就保持空白。","note"));
+  (p.options||[]).forEach((option,index)=>{
+   const row=node("div",undefined,"row");
+   const name=field("選項名稱",option.name,v=>option.name=v);name.querySelector("input").placeholder="例如：原味、黑胡椒、大份";name.querySelector("input").maxLength=80;
+   const price=field("此選項售價（NT$）",option.price,v=>option.price=v,"number");price.querySelector("input").placeholder="留白沿用商品原價";price.querySelector("input").min="0.01";price.querySelector("input").step="0.01";
+   const item=node("div");item.style.cssText="padding:12px 0;border-bottom:1px solid #e4d8c7";row.append(name,price);
+   item.append(row,button("移除此選項",()=>{p.options.splice(index,1);dirty=true;draw();saveDraft();},"danger"));list.append(item);
+  });
+ }
+ section.append(node("h3","商品選項／口味"),node("p","可自行新增多筆名稱與售價。價格填的是此選項的完整單價，不是加價；留白沿用商品原價。此處先保存選項設定，下單選擇功能尚待串接。","note"),list,button("＋ 新增選項",()=>{if(!Array.isArray(p.options))p.options=[];p.options.push({id:crypto.randomUUID(),name:"",price:""});dirty=true;draw();saveDraft();list.lastElementChild.querySelector("input").focus();}));
+ draw();return section;
+}
+
 function matchesProduct(p,query,category){return (!category||p.category===category)&&query.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean).every(word=>[p.name,p.category,p.spec].join(" ").toLocaleLowerCase().includes(word));}
 function filterProducts(){const q=$("product-search").value,c=$("category-filter").value;let count=0;Array.from($("products").children).forEach((article,index)=>{const visible=products[index]?matchesProduct(products[index],q,c):false;article.hidden=!visible;if(visible)count++;});$("product-count").textContent="顯示 "+count+" / "+products.length+" 項商品"+(count?"":"，請試試其他關鍵字");}
 function renderProducts(){
@@ -157,7 +187,7 @@ function renderProducts(){
   row.append(label,field("價格（NT$，留白代表請洽 LINE）",p.price,v=>p.price=v,"number"));right.append(row,field("規格",p.spec,v=>p.spec=v));
   const intro=node("label","商品詳細介紹");const textarea=node("textarea");textarea.value=p.description||"";textarea.rows=6;textarea.style.cssText="width:100%;font:inherit;padding:10px;border:1px solid #d8cbbb;border-radius:9px";textarea.addEventListener("input",()=>{p.description=textarea.value;dirty=true;});intro.append(textarea);right.append(intro);
   right.append(button("刪除商品",async()=>{if(!await confirmAction("確定刪除「"+(p.name||"未命名商品")+"」？"))return;products=products.filter(item=>item.id!==p.id);prunePhotos();dirty=true;renderProducts();saveDraft();},"danger"));
-  const compact=node("div");const title=node("strong",p.name||"未命名商品");compact.append(title,node("div",p.category+" · "+(p.spec||""),"note"));const priceField=field("價格（NT$）",p.price,v=>{p.price=v;const other=right.querySelector('input[type="number"]');if(other)other.value=v;},"number");compact.append(priceField);const detail=node("details");detail.append(node("summary","編輯詳細資料"),left,galleryEditor(p),right);compact.append(button("管理多張圖片",()=>{detail.open=true;detail.querySelector(".gallery-editor").scrollIntoView({behavior:"smooth",block:"center"});}));detail.addEventListener("toggle",()=>{if(!detail.open){title.textContent=p.name||"未命名商品";priceField.querySelector("input").value=p.price??"";filterProducts();}});const thumb=node("div");showPhoto(thumb,p);thumb.style.width="80px";article.append(thumb,compact,detail);$("products").append(article);
+  const compact=node("div");const title=node("strong",p.name||"未命名商品");compact.append(title,node("div",p.category+" · "+(p.spec||""),"note"));const priceField=field("價格（NT$）",p.price,v=>{p.price=v;const other=right.querySelector('input[type="number"]');if(other)other.value=v;},"number");compact.append(priceField);const detail=node("details");detail.append(node("summary","編輯詳細資料"),left,galleryEditor(p),optionsEditor(p),right);compact.append(button("管理多張圖片",()=>{detail.open=true;detail.querySelector(".gallery-editor").scrollIntoView({behavior:"smooth",block:"center"});}));detail.addEventListener("toggle",()=>{if(!detail.open){title.textContent=p.name||"未命名商品";priceField.querySelector("input").value=p.price??"";filterProducts();}});const thumb=node("div");showPhoto(thumb,p);thumb.style.width="80px";article.append(thumb,compact,detail);$("products").append(article);
  });
  filterProducts();
 }
@@ -169,6 +199,7 @@ function preview(){
  box.hidden=false;box.scrollIntoView({behavior:"smooth",block:"start"});
 }
 function validatePublish(){
+ products.forEach(validateOptions);
  for(const photo of pendingPhotos())if(!/^images[/][a-zA-Z0-9-]+[.]jpg$/.test(photo.path)||!/^data:image[/]jpeg;base64,[A-Za-z0-9+/=]+$/.test(photo.data))throw new Error("照片資料異常，請重新上傳商品照片。");
  if(!valid(snapshot()))throw new Error("菜單資料不完整，請檢查商品與分類。");
  for(const p of products){
