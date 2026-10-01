@@ -30,6 +30,7 @@ function render(product){
    selector.onchange=()=>{const v=OrderOptions.variants(product).find(v=>v.option_id===selector.value);$("price").textContent=v?Catalog.price(v.price):"請選擇口味／規格查看價格";link.href=baseURL+(v?"&option="+encodeURIComponent(v.option_id):"");$("option-message").textContent="";};
    selector.onchange();
   }
+  if(product.sold_out===true){$("price").textContent="已完售";$("product-options").hidden=true;link.textContent="已完售・暫停訂購";link.removeAttribute("href");link.setAttribute("aria-disabled","true");link.onclick=e=>e.preventDefault();}else{link.textContent="加入購物車／網站訂購 →";link.removeAttribute("aria-disabled");}
   photos=Catalog.photos(product);selected=0;$("thumbnails").replaceChildren();
   photos.forEach((src,i)=>{const button=document.createElement("button");button.type="button";button.className="thumbnail";button.setAttribute("aria-label","查看第 "+(i+1)+" 張照片");button.setAttribute("aria-pressed",String(i===0));const img=document.createElement("img");img.src=src;img.alt="";img.loading="lazy";img.addEventListener("error",()=>{button.textContent=String(i+1);},{once:true});button.append(img);button.addEventListener("click",()=>showPhoto(i));$("thumbnails").append(button);});
   for(const id of ["previous","next","lightbox-previous","lightbox-next"])$(id).disabled=photos.length<2;

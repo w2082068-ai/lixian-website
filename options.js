@@ -13,7 +13,7 @@ globalThis.OrderOptions=Object.freeze({
   return items.map(i=>{
    if(!i||typeof i.id!=="string"||!Number.isInteger(i.quantity)||i.quantity<1||i.quantity>99)throw Error("商品數量需為 1 至 99。");
    const found=catalog.filter(p=>this.key(p)===i.id);if(found.length!==1)throw Error("商品已變更，請重新選購。");
-   const p=found[0],optionId=i.option_id??"";if(typeof optionId!=="string")throw Error("請重新選擇商品選項。");
+   const p=found[0];if(p.sold_out===true)throw Error("商品「"+p.name+"」已完售，請移除後再下單。");const optionId=i.option_id??"";if(typeof optionId!=="string")throw Error("請重新選擇商品選項。");
    const variants=this.variants(p),matches=variants.filter(v=>v.option_id===optionId);
    if(matches.length!==1)throw Error("商品「"+p.name+"」的選項已變更，請重新選擇口味或規格。");
    const v=matches[0],price=this.cents(v.price),key=JSON.stringify([i.id,optionId]);
