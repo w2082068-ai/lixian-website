@@ -554,9 +554,10 @@
     "name": "海鮮套組2999",
     "category": "中秋節烤肉專區",
     "image": "images/p-3f702694-09d2-4b88-8fa3-5c6df12dd0dc-e9dbded8-d859-4e3f-82db-bc6fdb5a609b.jpg",
-    "description": "不想吃肉肉的朋友們，可以選擇海鮮套組喔！",
+    "description": "",
     "price": "2999",
-    "sold_out": true
+    "sold_out": true,
+    "spec": "待補貨中～～需要預購可以洽詢官方ＬＩＮＥ"
   },
   {
     "id": "p-7e213be0-be0e-4e2f-8e8e-e74e035cf69d",
