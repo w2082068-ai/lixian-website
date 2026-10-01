@@ -16,7 +16,8 @@
       "images/mtww3ha7-t3ieocbv.jpg"
     ],
     "spec": "中秋節限定",
-    "price": "999"
+    "price": "999",
+    "sold_out": true
   },
   {
     "id": "c1999",
@@ -36,7 +37,8 @@
       "images/mtww85m0-ytquiwi4.jpg"
     ],
     "spec": "中秋節限定",
-    "price": "999"
+    "price": "999",
+    "sold_out": true
   },
   {
     "id": "c2999",
@@ -56,7 +58,8 @@
       "images/mu2c945v-mzzbj6is.jpg"
     ],
     "spec": "中秋節限定",
-    "price": "1999"
+    "price": "1999",
+    "sold_out": true
   },
   {
     "id": "p-1e258b90-8386-40e1-b635-68c724a8fd82",
@@ -77,7 +80,8 @@
       "images/mu2dvljg-ya88apx5.jpg"
     ],
     "spec": "中秋節限定",
-    "price": "2999"
+    "price": "2999",
+    "sold_out": true
   },
   {
     "id": "p-25dded33-17a6-47c2-893e-bc19d1ed7c83",
@@ -86,7 +90,8 @@
     "category": "中秋節烤肉專區",
     "image": "images/mtvbn3k1-7ly87qdo.jpg",
     "spec": "中秋節限定",
-    "price": "4999"
+    "price": "4999",
+    "sold_out": true
   },
   {
     "id": "p-c3d2b6aa-ad12-4bfe-a100-0190b14132d8",
@@ -167,7 +172,8 @@
     "category": "肉品｜豬肉",
     "image": "images/pork-bbq-c22d170f-358d-4575-99d3-74d16066ec28.jpg",
     "spec": "300g／包",
-    "price": "135"
+    "price": "135",
+    "sold_out": true
   },
   {
     "id": "p-71613732-8c03-484b-b83e-07130042c77f",
@@ -176,7 +182,8 @@
     "category": "肉品｜牛肉",
     "image": "images/mtqxtcvk-nahijd98.jpg",
     "spec": "150g／包",
-    "price": "105"
+    "price": "105",
+    "sold_out": false
   },
   {
     "id": "p-7e4a2ff6-71e1-4df0-a465-c4a03c7a5dd5",
@@ -221,7 +228,8 @@
     "category": "蔬菜類",
     "image": "images/mtqzmy9k-mjc6csoz.jpg",
     "spec": "1000g／包",
-    "price": "85"
+    "price": "85",
+    "sold_out": true
   },
   {
     "id": "p-3f99e1c3-f6c9-4e1b-8ad9-b6236c6e6312",
@@ -435,7 +443,8 @@
     "category": "海鮮｜蝦類",
     "image": "images/mtty2eoe-78jwh1er.jpg",
     "spec": "6P／盒",
-    "price": "250"
+    "price": "250",
+    "sold_out": true
   },
   {
     "id": "p-7391f4c0-946f-424f-b822-50f27919339c",
@@ -546,7 +555,8 @@
     "category": "中秋節烤肉專區",
     "image": "images/p-3f702694-09d2-4b88-8fa3-5c6df12dd0dc-e9dbded8-d859-4e3f-82db-bc6fdb5a609b.jpg",
     "description": "不想吃肉肉的朋友們，可以選擇海鮮套組喔！",
-    "price": "2999"
+    "price": "2999",
+    "sold_out": true
   },
   {
     "id": "p-7e213be0-be0e-4e2f-8e8e-e74e035cf69d",
