@@ -36,7 +36,7 @@
       "images/mtww6kv9-qej574z8.jpg",
       "images/mtww85m0-ytquiwi4.jpg"
     ],
-    "spec": "補貨中～～有需要預購的朋友們歡迎加入官方ＬＩＮＥ洽詢",
+    "spec": "中秋節限定（剩最後３組）",
     "price": "999",
     "sold_out": false
   },
@@ -461,8 +461,9 @@
     "name": "Choice牛五花",
     "category": "肉品｜牛肉",
     "image": "images/mttnsjk6-xxtnfu5v.jpg",
-    "spec": "150g／盒",
-    "price": "85"
+    "spec": "150g／盒　［暫無庫存．預購請洽官方ＬＩＮＥ］",
+    "price": "85",
+    "sold_out": true
   },
   {
     "id": "p-5048a125-7990-432d-b911-4c60f142555d",
