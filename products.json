@@ -381,7 +381,8 @@
     "category": "海鮮｜蝦類",
     "image": "images/mtr3znmy-emvczp54.jpg",
     "spec": "6P(600g)／盒",
-    "price": "215"
+    "price": "215",
+    "sold_out": true
   },
   {
     "id": "p-77247967-d3f7-432d-9acf-567f01c0e48a",
