@@ -99,8 +99,9 @@
     "name": "PRIME翼板",
     "category": "肉品｜牛肉",
     "image": "images/mtsj8np7-6t9kzh88.jpg",
-    "spec": "150g／盒",
-    "price": "199"
+    "spec": "150g／盒 [暫無庫存,預購請洽官方LINE]",
+    "price": "199",
+    "sold_out": true
   },
   {
     "id": "p-122fe4a2-c440-4533-ab0e-2e52a5d3ef6f",
@@ -581,15 +582,6 @@
     "category": "肉品｜牛肉",
     "image": "images/p-351da3ba-a3e0-4eb6-8cdf-8aad6451698a-30c428a2-88af-47cd-960b-ebc2f6240c59.jpg",
     "spec": "秤重／包"
-  },
-  {
-    "id": "p-f3d006a9-729a-4209-b7a1-14a0e371b252",
-    "pageId": "d03ec483-5984-4598-9bf3-81262ee5f139",
-    "name": "Choice無骨牛排",
-    "category": "肉品｜牛肉",
-    "image": "images/p-f3d006a9-729a-4209-b7a1-14a0e371b252-d9432b66-4e26-40ed-a506-51d4a7d55885.jpg",
-    "description": "真空包裝每一片重量大約200-300g \n200g一片約328元 \n",
-    "spec": "秤重／片"
   },
   {
     "id": "p-3f702694-09d2-4b88-8fa3-5c6df12dd0dc",
