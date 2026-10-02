@@ -178,7 +178,7 @@
     "image": "images/pork-bbq-c22d170f-358d-4575-99d3-74d16066ec28.jpg",
     "spec": "300g／包",
     "price": "135",
-    "sold_out": true
+    "sold_out": false
   },
   {
     "id": "p-71613732-8c03-484b-b83e-07130042c77f",
@@ -649,7 +649,7 @@
     "name": "Choice板腱牛排",
     "category": "肉品｜牛肉",
     "image": "images/p-4463b68a-cd70-4702-9621-7f963021222b-c1325000-db97-4567-8246-a00129d11836.jpg",
-    "spec": "200g／包［暫無庫存,預定請洽官方ＬＩＮＥ］",
+    "spec": "200g／包［暫無庫存,預購請洽官方ＬＩＮＥ］",
     "price": "175",
     "sold_out": true,
     "description": ""
