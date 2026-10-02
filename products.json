@@ -683,7 +683,8 @@
     "price": "450",
     "images": [
       "images/dcd970bf-3f43-4304-9caf-295e12294d9d.jpg"
-    ]
+    ],
+    "sold_out": true
   },
   {
     "id": "p-5e054acb-f63c-4db4-9e0c-69600d10ea4b",
