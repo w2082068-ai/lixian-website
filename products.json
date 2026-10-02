@@ -655,8 +655,10 @@
     "name": "Choice板腱牛排",
     "category": "肉品｜牛肉",
     "image": "images/p-4463b68a-cd70-4702-9621-7f963021222b-c1325000-db97-4567-8246-a00129d11836.jpg",
-    "spec": "200g／包",
-    "price": "175"
+    "spec": "200g／包［暫無庫存,預定請洽官方ＬＩＮＥ］",
+    "price": "175",
+    "sold_out": true,
+    "description": ""
   },
   {
     "id": "p-d46ff739-7173-49d7-9820-de40396dff14",
