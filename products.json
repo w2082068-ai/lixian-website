@@ -450,9 +450,10 @@
     "name": "Choice翼板",
     "category": "肉品｜牛肉",
     "image": "images/mttno94u-ne9c1vrj.jpg",
-    "spec": "150g／盒",
+    "spec": "150g／盒　［暫無庫存．預購請洽官方ＬＩＮＥ］",
     "price": "190",
-    "images": []
+    "images": [],
+    "sold_out": true
   },
   {
     "id": "p-a6a616bc-3680-4d1b-93e1-953f36addfe1",
@@ -837,6 +838,7 @@
     "category": "肉品｜牛肉",
     "spec": "150g／盒　［暫無庫存．預購請洽官方ＬＩＥＮ］",
     "price": "245",
-    "image": "images/e18d33df-bed7-4731-8052-67ae1267fd6d.jpg"
+    "image": "images/e18d33df-bed7-4731-8052-67ae1267fd6d.jpg",
+    "sold_out": true
   }
 ]
