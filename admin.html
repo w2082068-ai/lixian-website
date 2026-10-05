@@ -5,7 +5,7 @@
 <meta name="robots" content="noindex,nofollow"><title>儷鮮嚴選｜菜單管理</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#f7f2ea;color:#4c392d;font-family:system-ui,-apple-system,"Noto Sans TC",sans-serif;line-height:1.6}header{background:#fffdf9;border-bottom:1px solid #e4d8c7;padding:22px max(18px,calc((100vw - 1000px)/2))}h1{font-size:25px;margin:0;letter-spacing:3px}header p{margin:4px 0;color:#796958}main{max-width:1036px;margin:auto;padding:20px 18px 60px}.box{background:#fffdf9;border:1px solid #e4d8c7;border-radius:18px;padding:20px;margin-bottom:18px}h2{font-size:19px;margin:0 0 12px}button,.link{border:1px solid #d8cbbb;border-radius:10px;padding:10px 16px;background:#fffaf3;color:#4c392d;font:inherit;cursor:pointer;text-decoration:none;display:inline-block}button:disabled{opacity:.5;cursor:wait}.primary{background:#4c392d;color:#fff}.danger{color:#943d36}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #a88758;outline-offset:3px}.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.note,small{color:#796958;font-size:13px}.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}label{display:block;font-size:14px}input,select{display:block;width:100%;border:1px solid #d8cbbb;border-radius:9px;padding:10px;background:white;color:#4c392d;font:inherit;margin:5px 0 12px}.product{display:grid;grid-template-columns:150px 1fr;gap:18px;border-top:1px solid #e4d8c7;padding:22px 0}.photo{width:100%;aspect-ratio:1;object-fit:contain;background:#eee5da;border-radius:12px}.photo-note{aspect-ratio:1;background:#eee5da;border-radius:12px;display:grid;place-items:center;font-size:13px;color:#796958}.category{display:flex;align-items:center;gap:8px;margin-bottom:8px}.category input{margin:0;flex:1;min-width:0}.category button{white-space:nowrap}.category-name{flex:1;overflow-wrap:anywhere}.preview-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.preview-card{border:1px solid #e4d8c7;border-radius:12px;padding:12px;overflow-wrap:anywhere}.preview-card strong{display:block}.preview-card img{width:100%;aspect-ratio:1;object-fit:contain}.price{color:#986d32;font-weight:700}#message{white-space:pre-line}summary{cursor:pointer}fieldset{border:0;margin:0;padding:0;min-width:0}@media(max-width:600px){.row{grid-template-columns:1fr;gap:0}.product{grid-template-columns:1fr}.product-photo{max-width:220px}.preview-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.category{flex-wrap:wrap}}
-[hidden]{display:none!important}.product{grid-template-columns:80px 1fr}.product>details{grid-column:1/-1}.product>details[open]{border-top:1px solid #e4d8c7;padding-top:12px}.product>details>.product-photo{max-width:180px}#product-count{font-size:14px}#message{position:sticky;top:0;background:#fff4dc;padding:12px;z-index:2}.gallery-editor{margin:20px 0;padding:16px;border:1px solid #e4d8c7;border-radius:12px}.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px}.gallery-card{min-width:0}.gallery-card button{padding:6px 10px;font-size:14px}.gallery-card img{height:150px}.gallery-editor h3{margin:0}</style>
+[hidden]{display:none!important}.product{grid-template-columns:80px 1fr}.product>details{grid-column:1/-1}.product>details[open]{border-top:1px solid #e4d8c7;padding-top:12px}.product>details>.product-photo{max-width:180px}#product-count{font-size:14px}#message{position:sticky;top:0;background:#fff4dc;padding:12px;z-index:2}.gallery-editor{margin:20px 0;padding:16px;border:1px solid #e4d8c7;border-radius:12px}.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px}.gallery-card{min-width:0}.gallery-card button{padding:6px 10px;font-size:14px}.gallery-card img{height:150px}.gallery-editor h3{margin:0}.sort-row{display:flex;gap:10px;align-items:center;border-top:1px solid #e4d8c7;padding:10px 0;flex-wrap:wrap}.sort-title{flex:1;min-width:180px}.sort-row input{width:72px;margin:0}.sort-row button{padding:6px 10px}.sort-row label{display:flex;align-items:center;gap:6px}</style>
 </head>
 <body><p style="text-align:center;padding:16px"><a href="./orders-admin.html">訂單管理：登入查看訂單、核款與出貨 →</a></p>
 <header><h1>儷鮮嚴選｜菜單管理</h1><p>新增分類、上傳照片、編輯商品與價格。</p><a class="link" href="./" target="_blank" rel="noopener">查看官網 ↗</a></header>
@@ -20,7 +20,7 @@
 <div class="toolbar"><label style="flex:1">新分類名稱<input id="new-category" placeholder="例如：節慶禮盒"></label><button id="add-category" type="button">新增分類</button></div>
 <p class="note">修改分類名稱會同步更新該分類的商品。請先移走分類內的商品，再刪除分類。</p>
 </section>
-<section class="box"><div class="toolbar"><h2 style="flex:1">商品管理</h2><button id="add-product" type="button">＋ 新增商品</button></div><div class="row"><label>快速搜尋商品<input id="product-search" type="search" placeholder="輸入商品名稱、規格或分類"></label><label>篩選分類<select id="category-filter"><option value="">全部分類</option></select></label></div><div class="toolbar"><button id="clear-product-search" type="button">清除搜尋</button><button id="quick-save" type="button" class="primary">儲存並發布</button><span id="product-count" role="status"></span></div><p class="note">價格留白代表請洽 LINE。搜尋不會移除商品；展開「編輯詳細資料」可修改照片、名稱與介紹。</p><div id="products"></div></section>
+<section class="box"><div class="toolbar"><h2 style="flex:1">商品管理</h2><button id="sort-products" type="button">調整商品順序</button><button id="add-product" type="button">＋ 新增商品</button></div><div class="row"><label>快速搜尋商品<input id="product-search" type="search" placeholder="輸入商品名稱、規格或分類"></label><label>篩選分類<select id="category-filter"><option value="">全部分類</option></select></label></div><div class="toolbar"><button id="clear-product-search" type="button">清除搜尋</button><button id="quick-save" type="button" class="primary">儲存並發布</button><span id="product-count" role="status"></span></div><p class="note">價格留白代表請洽 LINE。搜尋不會移除商品；展開「編輯詳細資料」可修改照片、名稱與介紹。</p><section id="sort-panel" hidden><p class="note">可搜尋或篩選分類後排序。位置以目前清單為準；可直接輸入位置後按「移動」。官網仍依分類分組，各分類內依此順序顯示。完成後按「儲存並發布」。</p><div id="sort-list"></div></section><div id="products"></div></section>
 <section class="box"><h2>儲存與預覽</h2><div class="toolbar"><button id="save" type="button">儲存草稿</button><button id="reload-online" type="button">載入官網版本</button><button id="preview-button" type="button">預覽菜單</button><button id="export" type="button">下載菜單備份</button><button id="restore" type="button">匯入菜單備份</button></div>
 <input id="backup-file" type="file" accept=".json,application/json" hidden>
 <p class="note">草稿只保存在目前瀏覽器，不會自動更新官網。下載備份可保存商品、分類與本次上傳的照片，交由協助者發布。</p>
@@ -172,7 +172,36 @@ function optionsEditor(p){
 }
 
 function matchesProduct(p,query,category){return (!category||p.category===category)&&query.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean).every(word=>[p.name,p.category,p.spec].join(" ").toLocaleLowerCase().includes(word));}
-function filterProducts(){const q=$("product-search").value,c=$("category-filter").value;let count=0;Array.from($("products").children).forEach((article,index)=>{const visible=products[index]?matchesProduct(products[index],q,c):false;article.hidden=!visible;if(visible)count++;});$("product-count").textContent="顯示 "+count+" / "+products.length+" 項商品"+(count?"":"，請試試其他關鍵字");}
+function filterProducts(){renderSortList();const q=$("product-search").value,c=$("category-filter").value;let count=0;Array.from($("products").children).forEach((article,index)=>{const visible=products[index]?matchesProduct(products[index],q,c):false;article.hidden=!visible;if(visible)count++;});$("product-count").textContent="顯示 "+count+" / "+products.length+" 項商品"+(count?"":"，請試試其他關鍵字");}
+
+function moveProductInList(product,position,list){
+ const target=Number(position)-1;
+ if(!Number.isInteger(target)||target<0||target>=list.length){message("位置請填 1～"+list.length+" 的整數。");return;}
+ const from=list.indexOf(product);if(from<0||from===target)return;
+ const reordered=list.slice();reordered.splice(from,1);reordered.splice(target,0,product);
+ const selected=new Set(list);let i=0;products=products.map(p=>selected.has(p)?reordered[i++]:p);
+ dirty=true;renderProducts();saveDraft();
+}
+function renderSortList(){
+ if($("sort-panel").hidden)return;
+ const list=products.filter(p=>matchesProduct(p,$("product-search").value,$("category-filter").value));
+ $("sort-list").replaceChildren();
+ if(!list.length)$("sort-list").append(node("p","沒有符合搜尋的商品。"));
+ list.forEach((p,index)=>{
+  const row=node("div",undefined,"sort-row"),title=node("div",undefined,"sort-title");
+  title.append(node("strong",(index+1)+". "+(p.name||"未命名商品")),node("div",p.category,"note"));
+  const up=button("↑ 往前",()=>moveProductInList(p,index,list)),down=button("↓ 往後",()=>moveProductInList(p,index+2,list));
+  up.disabled=index===0;down.disabled=index===list.length-1;
+  const label=node("label","移到"),position=node("input");position.type="number";position.min="1";position.max=String(list.length);position.step="1";position.value=String(index+1);position.setAttribute("aria-label",p.name+" 的位置");label.append(position);
+  row.append(title,up,down,label,button("移動",()=>moveProductInList(p,position.value,list)),button("置頂",()=>moveProductInList(p,1,list)));
+  $("sort-list").append(row);
+ });
+}
+$("sort-products").addEventListener("click",()=>{
+ const open=$("sort-panel").hidden;$("sort-panel").hidden=!open;$("products").hidden=open;
+ $("sort-products").textContent=open?"返回商品編輯":"調整商品順序";renderSortList();
+});
+
 function renderProducts(){
  const selected=$("category-filter").value;$("category-filter").replaceChildren();const all=node("option","全部分類");all.value="";$("category-filter").append(all);categories.forEach(c=>{const opt=node("option",c);opt.value=c;$("category-filter").append(opt)});$("category-filter").value=categories.includes(selected)?selected:"";
  $("products").replaceChildren();
@@ -226,6 +255,14 @@ function mergeMenu(base,draft,live){
   const n={...p};for(const field of new Set([...Object.keys(b),...Object.keys(d)])){if(field==="id")continue;if(!same(b[field],d[field])){if(!same(b[field],p[field])&&!same(d[field],p[field]))throw new Error("商品「"+p.name+"」的同一欄位有不同修改，尚未發布。請下載備份交由協助者整合。");if(d[field]===undefined)delete n[field];else n[field]=d[field];}}out.push(n);
  }
  for(const [k,d] of dm){const b=bm.get(k);if(!b)out.push(d);else if(!same(meaningful(b),meaningful(d)))throw new Error("商品「"+d.name+"」已在線上刪除，草稿仍保留修改，請先確認。");}
+ const common=new Set(base.map(key).filter(k=>draft.some(p=>key(p)===k)&&live.some(p=>key(p)===k)));
+ const order=list=>list.map(key).filter(k=>common.has(k));
+ const before=order(base),local=order(draft),remote=order(live);
+ if(!same(before,local)){
+  if(!same(before,remote)&&!same(local,remote))throw new Error("商品順序在另一處也有調整，草稿已保留，請先確認後再發布。");
+  const rank=new Map(draft.map((p,i)=>[key(p),i]));
+  out.sort((a,b)=>(rank.get(key(a))??Infinity)-(rank.get(key(b))??Infinity));
+ }
  return out;
 }
 async function readBlob(sha){const b=await api("/git/blobs/"+sha);const bytes=Uint8Array.from(atob(b.content.replace(/\s/g,"")),c=>c.charCodeAt(0));return JSON.parse(new TextDecoder().decode(bytes));}
@@ -260,7 +297,7 @@ async function publish(){
  }catch(error){message(error.message);}finally{$("editor").disabled=false;$("publish").disabled=false;publishing=false;}
 }
 $("add-category").addEventListener("click",()=>{const name=$("new-category").value.trim();if(!name || name==="全部")return message("請輸入新分類名稱，且不可使用「全部」。");if(categories.includes(name))return message("此分類名稱已存在。");categories.push(name);$("new-category").value="";dirty=true;render();saveDraft();});
-$("add-product").addEventListener("click",()=>{if(!categories.length)return message("請先新增一個分類。");products.push({pageId:crypto.randomUUID(),id:"p-"+crypto.randomUUID(),name:"",category:categories[0],spec:"",price:"",image:""});dirty=true;$("product-search").value="";$("category-filter").value="";renderProducts();$("products").lastElementChild.querySelector("details").open=true;$("products").lastElementChild.scrollIntoView({behavior:"smooth",block:"center"});});
+$("add-product").addEventListener("click",()=>{if(!categories.length)return message("請先新增一個分類。");$("sort-panel").hidden=true;$("products").hidden=false;$("sort-products").textContent="調整商品順序";products.push({pageId:crypto.randomUUID(),id:"p-"+crypto.randomUUID(),name:"",category:categories[0],spec:"",price:"",image:""});dirty=true;$("product-search").value="";$("category-filter").value="";renderProducts();$("products").lastElementChild.querySelector("details").open=true;$("products").lastElementChild.scrollIntoView({behavior:"smooth",block:"center"});});
 $("save").addEventListener("click",saveDraft);$("preview-button").addEventListener("click",preview);$("publish").addEventListener("click",publish);
 $("export").addEventListener("click",()=>{const blob=new Blob([JSON.stringify(snapshot(),null,2)],{type:"application/json"});const url=URL.createObjectURL(blob);const a=node("a");a.href=url;a.download="儷鮮嚴選-菜單備份-"+new Date().toISOString().slice(0,10)+".json";a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);message("已下載菜單備份，包含草稿與本次上傳的照片。");});
 $("restore").addEventListener("click",()=>$("backup-file").click());
