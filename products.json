@@ -851,7 +851,8 @@
     "images": [
       "images/49fad8aa-9dfe-4fe5-a484-075b5934f510.jpg",
       "images/7377a4ec-c527-4bae-8771-2b22537fab0c.jpg"
-    ]
+    ],
+    "sold_out": true
   },
   {
     "pageId": "c1c8fbb2-fad6-4f58-9b49-e67c86b41c55",
