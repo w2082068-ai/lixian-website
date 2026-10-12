@@ -207,7 +207,7 @@
     "name": "PRIME翼板",
     "category": "肉品｜牛肉",
     "image": "images/mtsj8np7-6t9kzh88.jpg",
-    "spec": "150g／盒 [暫無庫存,預購請洽官方LINE]",
+    "spec": "150g／盒 ",
     "price": "199",
     "sold_out": false
   },
@@ -451,7 +451,7 @@
     "name": "Choice翼板",
     "category": "肉品｜牛肉",
     "image": "images/mttno94u-ne9c1vrj.jpg",
-    "spec": "150g／盒　［暫無庫存．預購請洽官方ＬＩＮＥ］",
+    "spec": "150g／盒",
     "price": "190",
     "images": [],
     "sold_out": false
@@ -575,7 +575,7 @@
     "name": "Choice牛五花",
     "category": "肉品｜牛肉",
     "image": "images/mttnsjk6-xxtnfu5v.jpg",
-    "spec": "150g／盒　［暫無庫存．預購請洽官方ＬＩＮＥ］",
+    "spec": "150g／盒",
     "price": "85",
     "sold_out": false
   },
@@ -877,7 +877,7 @@
     "id": "p-ee5e403c-c5e3-4f26-9a13-782c465164ce",
     "name": "CHOICE無骨牛小排",
     "category": "肉品｜牛肉",
-    "spec": "150g／盒　［暫無庫存．預購請洽官方ＬＩＥＮ］",
+    "spec": "150g／盒",
     "price": "245",
     "image": "images/e18d33df-bed7-4731-8052-67ae1267fd6d.jpg",
     "sold_out": false
