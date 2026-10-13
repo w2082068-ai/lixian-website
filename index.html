@@ -66,7 +66,9 @@ function render(category) {
     groups.get(product.category).push(product);
   });
   menu.replaceChildren();
-  for (const [name, products] of groups) {
+  const categoryOrder=Array.from(nav.children,button=>button.textContent);
+  const orderedGroups=[...groups].sort((a,b)=>categoryOrder.indexOf(a[0])-categoryOrder.indexOf(b[0]));
+  for (const [name, products] of orderedGroups) {
     const section = element("section", "section");
     const grid = element("div", "grid");
     products.forEach(product => grid.append(productCard(product)));
