@@ -816,11 +816,12 @@
     "name": "帶殼鮑魚",
     "category": "海鮮｜貝類",
     "spec": "18P／袋",
-    "price": "351",
+    "price": "350",
     "image": "images/d2c7c723-3694-4c6a-a75b-272a2522131c.jpg",
     "images": [
       "images/bc907f83-2d30-4225-a79f-8ee1b59dff9d.jpg"
-    ]
+    ],
+    "sold_out": true
   },
   {
     "pageId": "1654bd7a-e663-47be-836c-a551aee60d2d",
