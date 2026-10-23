@@ -703,7 +703,8 @@
     "category": "肉品｜牛肉",
     "image": "images/p-5e054acb-f63c-4db4-9e0c-69600d10ea4b-48febbe6-e2cf-437f-abae-e95e1146d805.jpg",
     "spec": "100g／盒",
-    "price": "190"
+    "price": "190",
+    "sold_out": true
   },
   {
     "id": "p-54be6239-37f3-4f02-8999-abac95847b8b",
@@ -843,7 +844,8 @@
     "category": "肉品｜牛肉",
     "image": "images/p-0544a7ad-a00d-4ee5-a4dd-9c94e4fb6f03-88641efc-b76b-4752-8c52-f4426053ec89.jpg",
     "spec": "100g／盒",
-    "price": "215"
+    "price": "215",
+    "sold_out": true
   },
   {
     "id": "p-69540d6b-b8b1-4426-9546-f228347a3e41",
