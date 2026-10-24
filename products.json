@@ -723,7 +723,8 @@
     "category": "蔬菜類",
     "image": "images/p-4ef026e5-6f40-4fe2-83d0-d182cfcf34e2-82380675-6063-4d05-a58a-bd93b2869e6d.jpg",
     "spec": "1000g／袋",
-    "price": "89"
+    "price": "89",
+    "sold_out": true
   },
   {
     "id": "p-89ac20ff-f3af-4021-a492-fa36f6af016e",
