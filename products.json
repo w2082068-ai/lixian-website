@@ -425,7 +425,8 @@
     "category": "肉品｜鴨肉",
     "image": "images/mtsikyr0-drvdoi0q.jpg",
     "spec": "包／片",
-    "price": "199"
+    "price": "199",
+    "sold_out": true
   },
   {
     "id": "p-17fb796e-1695-490c-96f5-afa3c06faee3",
