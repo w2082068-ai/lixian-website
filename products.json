@@ -161,7 +161,8 @@
     "category": "海鮮｜魚類",
     "image": "images/mtquyb9p-001yvppb.jpg",
     "spec": "900±15g／盒",
-    "price": "380"
+    "price": "380",
+    "sold_out": true
   },
   {
     "id": "cod",
