@@ -497,7 +497,8 @@
     "category": "海鮮｜蝦類",
     "image": "images/mttye4e2-ilqj90ba.jpg",
     "spec": "600g／包",
-    "price": "355"
+    "price": "355",
+    "sold_out": true
   },
   {
     "id": "p-db960406-ac9b-4d1d-b69a-8248366f4c4e",
