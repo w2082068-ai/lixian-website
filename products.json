@@ -219,7 +219,8 @@
     "category": "海鮮｜火鍋料／丸類",
     "image": "images/mtqz67yh-q64eiwee.jpg",
     "spec": "600g／包",
-    "price": "125"
+    "price": "125",
+    "sold_out": true
   },
   {
     "id": "p-28d77783-2c55-487f-8a5a-6775942d4d73",
