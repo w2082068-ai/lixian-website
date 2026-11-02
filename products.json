@@ -703,7 +703,8 @@
     "category": "海鮮｜魷魚／大中小卷／透抽",
     "image": "images/p-f68bd885-8f9b-49cd-92b7-78edf788e979-59d0770c-579c-4f7a-9229-5ff453f3c234.jpg",
     "spec": "隻／包",
-    "price": "45"
+    "price": "45",
+    "sold_out": true
   },
   {
     "id": "p-530bde13-92e6-4cea-99f1-dc2867c452f3",
