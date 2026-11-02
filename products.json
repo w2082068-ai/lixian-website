@@ -542,7 +542,8 @@
     "category": "肉品｜豬肉",
     "image": "images/mtvb34g9-n1r0v7ft.jpg",
     "spec": "150g／盒",
-    "price": "75"
+    "price": "75",
+    "sold_out": true
   },
   {
     "id": "p-03b4f9fd-d0c7-47bf-b353-d8040c01010d",
