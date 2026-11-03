@@ -757,7 +757,8 @@
       "images/munwqsq0-z4l9xt10.jpg"
     ],
     "spec": "平均１kg左右／組",
-    "price": "2500"
+    "price": "2500",
+    "sold_out": true
   },
   {
     "pageId": "01ad3bd9-abf3-462b-83e9-288e820f7e2f",
