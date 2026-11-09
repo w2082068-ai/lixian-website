@@ -134,9 +134,12 @@
     "pageId": "49a5eb0b-6d15-48ef-9819-0daedf399650",
     "name": "熟文蛤",
     "category": "海鮮｜貝類",
-    "image": "images/cooked_clams_500g.jpeg",
+    "image": "images/4340feb8-f51c-4df7-9141-4f7871ca6245.jpg",
     "spec": "500g／包",
-    "price": "155"
+    "price": "155",
+    "images": [
+      "images/590ba8ff-273a-46ea-b142-d9d03b098c8a.jpg"
+    ]
   },
   {
     "id": "p-32f8a090-9918-4c92-8012-a4aa318d98b5",
