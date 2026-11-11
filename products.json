@@ -299,7 +299,8 @@
     "name": "伊比利豬肋條",
     "category": "肉品｜豬肉",
     "image": "images/mtr13ipc-qhjls6dg.jpg",
-    "spec": "秤重／包"
+    "spec": "秤重／包",
+    "sold_out": true
   },
   {
     "id": "p-71613732-8c03-484b-b83e-07130042c77f",
