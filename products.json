@@ -273,7 +273,8 @@
     "category": "海鮮｜魚類",
     "image": "images/mtr06gdj-mtixnwzz.jpg",
     "spec": "400-500g／片",
-    "price": "139"
+    "price": "139",
+    "sold_out": true
   },
   {
     "id": "p-03788ba4-5473-4e91-9733-7114281b4979",
