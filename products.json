@@ -515,7 +515,8 @@
     "category": "火鍋料理包",
     "image": "images/mtvae90f-inrsqlnx.jpg",
     "spec": "內容量2800g／包",
-    "price": "550"
+    "price": "550",
+    "sold_out": true
   },
   {
     "id": "p-3a1c5f71-448e-44aa-8ea5-8b7724e83ea6",
